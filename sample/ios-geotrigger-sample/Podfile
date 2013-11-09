@@ -1,1 +1,0 @@
-pod 'GeotriggerSDK', path: => '~/src/Geotrigger-SDK-iOS'

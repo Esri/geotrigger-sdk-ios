@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23713983F80E4961BA850EC2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F977C6A93E4FE59A22A4B4 /* libPods.a */; };
+		9479E1F4182DC5160009AFAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9479E1F3182DC5160009AFAF /* Foundation.framework */; };
+		9479E1F6182DC5160009AFAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9479E1F5182DC5160009AFAF /* CoreGraphics.framework */; };
+		9479E1F8182DC5160009AFAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9479E1F7182DC5160009AFAF /* UIKit.framework */; };
+		9479E1FE182DC5160009AFAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9479E1FC182DC5160009AFAF /* InfoPlist.strings */; };
+		9479E200182DC5160009AFAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9479E1FF182DC5160009AFAF /* main.m */; };
+		9479E204182DC5160009AFAF /* GTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9479E203182DC5160009AFAF /* GTSAppDelegate.m */; };
+		9479E207182DC5160009AFAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9479E205182DC5160009AFAF /* Main.storyboard */; };
+		9479E20A182DC5160009AFAF /* GTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9479E209182DC5160009AFAF /* GTSViewController.m */; };
+		9479E20C182DC5160009AFAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9479E20B182DC5160009AFAF /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9479E1F0182DC5160009AFAF /* geotrigger-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geotrigger-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9479E1F3182DC5160009AFAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9479E1F5182DC5160009AFAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9479E1F7182DC5160009AFAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9479E1FB182DC5160009AFAF /* geotrigger-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "geotrigger-sample-Info.plist"; sourceTree = "<group>"; };
+		9479E1FD182DC5160009AFAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9479E1FF182DC5160009AFAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9479E201182DC5160009AFAF /* geotrigger-sample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "geotrigger-sample-Prefix.pch"; sourceTree = "<group>"; };
+		9479E202182DC5160009AFAF /* GTSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSAppDelegate.h; sourceTree = "<group>"; };
+		9479E203182DC5160009AFAF /* GTSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSAppDelegate.m; sourceTree = "<group>"; };
+		9479E206182DC5160009AFAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9479E208182DC5160009AFAF /* GTSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSViewController.h; sourceTree = "<group>"; };
+		9479E209182DC5160009AFAF /* GTSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSViewController.m; sourceTree = "<group>"; };
+		9479E20B182DC5160009AFAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9479E212182DC5160009AFAF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9479E228182DC74B0009AFAF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B5AED635634040E8BB2756EE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		F7F977C6A93E4FE59A22A4B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9479E1ED182DC5160009AFAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9479E1F6182DC5160009AFAF /* CoreGraphics.framework in Frameworks */,
+				9479E1F8182DC5160009AFAF /* UIKit.framework in Frameworks */,
+				9479E1F4182DC5160009AFAF /* Foundation.framework in Frameworks */,
+				23713983F80E4961BA850EC2 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9479E1E7182DC5160009AFAF = {
+			isa = PBXGroup;
+			children = (
+				9479E1F9182DC5160009AFAF /* geotrigger-sample */,
+				9479E1F2182DC5160009AFAF /* Frameworks */,
+				9479E1F1182DC5160009AFAF /* Products */,
+				B5AED635634040E8BB2756EE /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		9479E1F1182DC5160009AFAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9479E1F0182DC5160009AFAF /* geotrigger-sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9479E1F2182DC5160009AFAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9479E1F3182DC5160009AFAF /* Foundation.framework */,
+				9479E1F5182DC5160009AFAF /* CoreGraphics.framework */,
+				9479E1F7182DC5160009AFAF /* UIKit.framework */,
+				9479E212182DC5160009AFAF /* XCTest.framework */,
+				F7F977C6A93E4FE59A22A4B4 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9479E1F9182DC5160009AFAF /* geotrigger-sample */ = {
+			isa = PBXGroup;
+			children = (
+				9479E228182DC74B0009AFAF /* Constants.h */,
+				9479E202182DC5160009AFAF /* GTSAppDelegate.h */,
+				9479E203182DC5160009AFAF /* GTSAppDelegate.m */,
+				9479E205182DC5160009AFAF /* Main.storyboard */,
+				9479E208182DC5160009AFAF /* GTSViewController.h */,
+				9479E209182DC5160009AFAF /* GTSViewController.m */,
+				9479E20B182DC5160009AFAF /* Images.xcassets */,
+				9479E1FA182DC5160009AFAF /* Supporting Files */,
+			);
+			path = "geotrigger-sample";
+			sourceTree = "<group>";
+		};
+		9479E1FA182DC5160009AFAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9479E1FB182DC5160009AFAF /* geotrigger-sample-Info.plist */,
+				9479E1FC182DC5160009AFAF /* InfoPlist.strings */,
+				9479E1FF182DC5160009AFAF /* main.m */,
+				9479E201182DC5160009AFAF /* geotrigger-sample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9479E1EF182DC5160009AFAF /* geotrigger-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9479E222182DC5160009AFAF /* Build configuration list for PBXNativeTarget "geotrigger-sample" */;
+			buildPhases = (
+				EA2FCCB8EB854E22B015FC0A /* Check Pods Manifest.lock */,
+				9479E1EC182DC5160009AFAF /* Sources */,
+				9479E1ED182DC5160009AFAF /* Frameworks */,
+				9479E1EE182DC5160009AFAF /* Resources */,
+				81C25DA08F3948D98670C84F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "geotrigger-sample";
+			productName = "geotrigger-sample";
+			productReference = 9479E1F0182DC5160009AFAF /* geotrigger-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9479E1E8182DC5160009AFAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GTS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = ESRI;
+				TargetAttributes = {
+					9479E1EF182DC5160009AFAF = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 9479E1EB182DC5160009AFAF /* Build configuration list for PBXProject "geotrigger-sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9479E1E7182DC5160009AFAF;
+			productRefGroup = 9479E1F1182DC5160009AFAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9479E1EF182DC5160009AFAF /* geotrigger-sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9479E1EE182DC5160009AFAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9479E20C182DC5160009AFAF /* Images.xcassets in Resources */,
+				9479E1FE182DC5160009AFAF /* InfoPlist.strings in Resources */,
+				9479E207182DC5160009AFAF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81C25DA08F3948D98670C84F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA2FCCB8EB854E22B015FC0A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9479E1EC182DC5160009AFAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9479E200182DC5160009AFAF /* main.m in Sources */,
+				9479E20A182DC5160009AFAF /* GTSViewController.m in Sources */,
+				9479E204182DC5160009AFAF /* GTSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9479E1FC182DC5160009AFAF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9479E1FD182DC5160009AFAF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9479E205182DC5160009AFAF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9479E206182DC5160009AFAF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9479E220182DC5160009AFAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9479E221182DC5160009AFAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9479E223182DC5160009AFAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5AED635634040E8BB2756EE /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "geotrigger-sample/geotrigger-sample-Prefix.pch";
+				INFOPLIST_FILE = "geotrigger-sample/geotrigger-sample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9479E224182DC5160009AFAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5AED635634040E8BB2756EE /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "geotrigger-sample/geotrigger-sample-Prefix.pch";
+				INFOPLIST_FILE = "geotrigger-sample/geotrigger-sample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9479E1EB182DC5160009AFAF /* Build configuration list for PBXProject "geotrigger-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9479E220182DC5160009AFAF /* Debug */,
+				9479E221182DC5160009AFAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9479E222182DC5160009AFAF /* Build configuration list for PBXNativeTarget "geotrigger-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9479E223182DC5160009AFAF /* Debug */,
+				9479E224182DC5160009AFAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9479E1E8182DC5160009AFAF /* Project object */;
+}
