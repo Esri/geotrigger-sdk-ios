@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # Metadata
   s.name         = "GeotriggerSDK"
-  s.version      = "0.2.0"
+  s.version      = "0.0.1"
   s.summary      = "A library for using the ArcGIS Geotrigger Service with iOS."
   # TODO: Write a fer reals description.
   s.description  = <<-DESC
@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "6.0"
   # TODO: update this url when we go public with the Esri one. We'll also need to make sure that repo has the 0.2.0 tag on it.
   s.source       = { :git => "https://github.com/geoloqi/Geotrigger-SDK-iOS.git", :tag => s.version.to_s }
+  # TODO: Add a license
   s.license      = { :file => "LICENSE", :type => "Commercial" }
 
   # Frameworks
