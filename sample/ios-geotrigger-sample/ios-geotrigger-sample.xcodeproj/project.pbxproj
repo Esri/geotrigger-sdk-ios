@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94B513C117D2C72A00963CB8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B513C017D2C72A00963CB8 /* CoreLocation.framework */; };
+		94F3DA7217D261A700E6C274 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F3DA7117D261A700E6C274 /* UIKit.framework */; };
+		94F3DA7417D261A700E6C274 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F3DA7317D261A700E6C274 /* Foundation.framework */; };
+		94F3DA7617D261A700E6C274 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F3DA7517D261A700E6C274 /* CoreGraphics.framework */; };
+		94F3DA7C17D261A700E6C274 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94F3DA7A17D261A700E6C274 /* InfoPlist.strings */; };
+		94F3DA7E17D261A700E6C274 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F3DA7D17D261A700E6C274 /* main.m */; };
+		94F3DA8217D261A700E6C274 /* GTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F3DA8117D261A700E6C274 /* GTAppDelegate.m */; };
+		94F3DA8417D261A700E6C274 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F3DA8317D261A700E6C274 /* Default.png */; };
+		94F3DA8617D261A700E6C274 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F3DA8517D261A700E6C274 /* Default@2x.png */; };
+		94F3DA8817D261A700E6C274 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F3DA8717D261A700E6C274 /* Default-568h@2x.png */; };
+		94F3DA8B17D261A700E6C274 /* GTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F3DA8A17D261A700E6C274 /* GTViewController.m */; };
+		94F3DA8E17D261A700E6C274 /* GTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F3DA8C17D261A700E6C274 /* GTViewController.xib */; };
+		94FD2784182C2F6F00534A9C /* GeotriggerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD2783182C2F6F00534A9C /* GeotriggerSDK.framework */; };
+		94FD2786182C350B00534A9C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD2785182C350B00534A9C /* Security.framework */; };
+		94FD2788182C351C00534A9C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD2787182C351C00534A9C /* SystemConfiguration.framework */; };
+		94FD278A182C352A00534A9C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD2789182C352A00534A9C /* MobileCoreServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		67EF2CC3A564DCD973BA9A75 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		94B513C017D2C72A00963CB8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		94F3DA6E17D261A700E6C274 /* ios-geotrigger-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-geotrigger-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F3DA7117D261A700E6C274 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		94F3DA7317D261A700E6C274 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94F3DA7517D261A700E6C274 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		94F3DA7917D261A700E6C274 /* ios-geotrigger-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios-geotrigger-sample-Info.plist"; sourceTree = "<group>"; };
+		94F3DA7B17D261A700E6C274 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94F3DA7D17D261A700E6C274 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		94F3DA7F17D261A700E6C274 /* ios-geotrigger-sample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-geotrigger-sample-Prefix.pch"; sourceTree = "<group>"; };
+		94F3DA8017D261A700E6C274 /* GTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTAppDelegate.h; sourceTree = "<group>"; };
+		94F3DA8117D261A700E6C274 /* GTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTAppDelegate.m; sourceTree = "<group>"; };
+		94F3DA8317D261A700E6C274 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		94F3DA8517D261A700E6C274 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		94F3DA8717D261A700E6C274 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		94F3DA8917D261A700E6C274 /* GTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTViewController.h; sourceTree = "<group>"; };
+		94F3DA8A17D261A700E6C274 /* GTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTViewController.m; sourceTree = "<group>"; };
+		94F3DA8D17D261A700E6C274 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GTViewController.xib; sourceTree = "<group>"; };
+		94FD2783182C2F6F00534A9C /* GeotriggerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GeotriggerSDK.framework; sourceTree = "<group>"; };
+		94FD2785182C350B00534A9C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		94FD2787182C351C00534A9C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		94FD2789182C352A00534A9C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94F3DA6B17D261A700E6C274 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94FD278A182C352A00534A9C /* MobileCoreServices.framework in Frameworks */,
+				94FD2788182C351C00534A9C /* SystemConfiguration.framework in Frameworks */,
+				94FD2786182C350B00534A9C /* Security.framework in Frameworks */,
+				94F3DA7217D261A700E6C274 /* UIKit.framework in Frameworks */,
+				94F3DA7417D261A700E6C274 /* Foundation.framework in Frameworks */,
+				94F3DA7617D261A700E6C274 /* CoreGraphics.framework in Frameworks */,
+				94FD2784182C2F6F00534A9C /* GeotriggerSDK.framework in Frameworks */,
+				94B513C117D2C72A00963CB8 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94F3DA6517D261A700E6C274 = {
+			isa = PBXGroup;
+			children = (
+				94F3DA7717D261A700E6C274 /* ios-geotrigger-sample */,
+				94F3DA7017D261A700E6C274 /* Frameworks */,
+				94F3DA6F17D261A700E6C274 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94F3DA6F17D261A700E6C274 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94F3DA6E17D261A700E6C274 /* ios-geotrigger-sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94F3DA7017D261A700E6C274 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94FD2789182C352A00534A9C /* MobileCoreServices.framework */,
+				94FD2787182C351C00534A9C /* SystemConfiguration.framework */,
+				94FD2785182C350B00534A9C /* Security.framework */,
+				94FD2783182C2F6F00534A9C /* GeotriggerSDK.framework */,
+				94B513C017D2C72A00963CB8 /* CoreLocation.framework */,
+				94F3DA7117D261A700E6C274 /* UIKit.framework */,
+				94F3DA7317D261A700E6C274 /* Foundation.framework */,
+				94F3DA7517D261A700E6C274 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94F3DA7717D261A700E6C274 /* ios-geotrigger-sample */ = {
+			isa = PBXGroup;
+			children = (
+				94F3DA8017D261A700E6C274 /* GTAppDelegate.h */,
+				94F3DA8117D261A700E6C274 /* GTAppDelegate.m */,
+				94F3DA8917D261A700E6C274 /* GTViewController.h */,
+				94F3DA8A17D261A700E6C274 /* GTViewController.m */,
+				94F3DA8C17D261A700E6C274 /* GTViewController.xib */,
+				94F3DA7817D261A700E6C274 /* Supporting Files */,
+				67EF2CC3A564DCD973BA9A75 /* Constants.h */,
+			);
+			path = "ios-geotrigger-sample";
+			sourceTree = "<group>";
+		};
+		94F3DA7817D261A700E6C274 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94F3DA7917D261A700E6C274 /* ios-geotrigger-sample-Info.plist */,
+				94F3DA7A17D261A700E6C274 /* InfoPlist.strings */,
+				94F3DA7D17D261A700E6C274 /* main.m */,
+				94F3DA7F17D261A700E6C274 /* ios-geotrigger-sample-Prefix.pch */,
+				94F3DA8317D261A700E6C274 /* Default.png */,
+				94F3DA8517D261A700E6C274 /* Default@2x.png */,
+				94F3DA8717D261A700E6C274 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94F3DA6D17D261A700E6C274 /* ios-geotrigger-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94F3DA9117D261A700E6C274 /* Build configuration list for PBXNativeTarget "ios-geotrigger-sample" */;
+			buildPhases = (
+				94F3DA6A17D261A700E6C274 /* Sources */,
+				94F3DA6B17D261A700E6C274 /* Frameworks */,
+				94F3DA6C17D261A700E6C274 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-geotrigger-sample";
+			productName = "ios-geotrigger-sample";
+			productReference = 94F3DA6E17D261A700E6C274 /* ios-geotrigger-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94F3DA6617D261A700E6C274 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GT;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = ESRI;
+				TargetAttributes = {
+					94F3DA6D17D261A700E6C274 = {
+						DevelopmentTeam = RKDN99WXXN;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 94F3DA6917D261A700E6C274 /* Build configuration list for PBXProject "ios-geotrigger-sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 94F3DA6517D261A700E6C274;
+			productRefGroup = 94F3DA6F17D261A700E6C274 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94F3DA6D17D261A700E6C274 /* ios-geotrigger-sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94F3DA6C17D261A700E6C274 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F3DA7C17D261A700E6C274 /* InfoPlist.strings in Resources */,
+				94F3DA8417D261A700E6C274 /* Default.png in Resources */,
+				94F3DA8617D261A700E6C274 /* Default@2x.png in Resources */,
+				94F3DA8817D261A700E6C274 /* Default-568h@2x.png in Resources */,
+				94F3DA8E17D261A700E6C274 /* GTViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94F3DA6A17D261A700E6C274 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F3DA7E17D261A700E6C274 /* main.m in Sources */,
+				94F3DA8217D261A700E6C274 /* GTAppDelegate.m in Sources */,
+				94F3DA8B17D261A700E6C274 /* GTViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		94F3DA7A17D261A700E6C274 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94F3DA7B17D261A700E6C274 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		94F3DA8C17D261A700E6C274 /* GTViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94F3DA8D17D261A700E6C274 /* en */,
+			);
+			name = GTViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94F3DA8F17D261A700E6C274 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		94F3DA9017D261A700E6C274 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94F3DA9217D261A700E6C274 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ryana/src/Geotrigger-Beta-SDK/ios/sample/ios-geotrigger-sample",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-geotrigger-sample/ios-geotrigger-sample-Prefix.pch";
+				INFOPLIST_FILE = "ios-geotrigger-sample/ios-geotrigger-sample-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		94F3DA9317D261A700E6C274 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ryana/src/Geotrigger-Beta-SDK/ios/sample/ios-geotrigger-sample",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-geotrigger-sample/ios-geotrigger-sample-Prefix.pch";
+				INFOPLIST_FILE = "ios-geotrigger-sample/ios-geotrigger-sample-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94F3DA6917D261A700E6C274 /* Build configuration list for PBXProject "ios-geotrigger-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94F3DA8F17D261A700E6C274 /* Debug */,
+				94F3DA9017D261A700E6C274 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94F3DA9117D261A700E6C274 /* Build configuration list for PBXNativeTarget "ios-geotrigger-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94F3DA9217D261A700E6C274 /* Debug */,
+				94F3DA9317D261A700E6C274 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94F3DA6617D261A700E6C274 /* Project object */;
+}

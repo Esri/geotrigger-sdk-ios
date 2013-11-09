@@ -1,0 +1,46 @@
+iOS SDK Changelog
+=================
+[13.310] - 11/8/2013
+- Removed external dependencies. You no longer need to have AFNetworking or
+CocoaLumberjack in your project.
+
+NOTE: AGSGTApiClient used to inherit from AFHttpClient so if you were using
+any methods other than postPath:parameters:success:failure: to communicate
+with the Geotrigger Service API, they will no longer work.
+
+The success and failure blocks' parameters of
+postPath:parameters:success:failure: also took AFHTTPRequestOperation *request
+as their first argument, so all existing calls to that method will need to be
+changed. The request operation parameter was simply removed from these blocks.
+
+If either of these are a problem for you please contact geotriggerdev@esri.com
+and let us know which method(s) you were using on this class, or what you were
+using the request parameter for so we can provide that functionality in a
+future release!
+
+[13.301] - 10/28/2013
+- Added error parameter to AGSGTGeotriggerManager’s
+setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:’s
+completion block. This will allow you to detect if the the AGO registration
+calls errored out in anyway. NOTE: This is an interface change and will break
+existing calls to this method.
+- Added CocoaLumberjack logging library to the internal SDK. NOTE: This means
+you’ll need to add “pod ‘CocoaLumberjack’” to your Podfile and run ‘pod
+install’ again after upgrading to this version.
+- Added deviceId property to AGSGTGeotriggerManager
+- Fixed problem with handlePushNotification: method of AGSGTGeotriggerManager
+after server update that moved where the text for the alert is located in the
+notification, causing the alerts that this method showed to be empty.
+
+[13.252] - 9/9/2013
+- Fix bug causing auth tokens to not automatically retry the request after
+refresh in some cases on start up.
+
+[13.249] - 9/6/2013
+- Enabled battery monitoring for location updates.
+
+[13.248] - 9/5/2013
+- Changed the didUploadLocations block property of the AGSGTGeotriggerManager
+to pass in a count of locations uploaded rather than an Array of
+AGSGTLocationFixes as the array was an inaccurate representation of what was
+actually uploaded.
