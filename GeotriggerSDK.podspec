@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   # Spec
   s.platform     = :ios, "6.0"
   # TODO: update this url when we go public with the Esri one. We'll also need to make sure that repo has the 0.2.0 tag on it.
-  s.source       = { :git => "https://github.com/geoloqi/Geotrigger-SDK-iOS.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/Esri/geotrigger-sdk-ios.git", :tag => s.version.to_s }
   # TODO: Add a license
   s.license      = { :file => "LICENSE", :type => "Commercial" }
 

@@ -2,7 +2,7 @@ iOS SDK Changelog
 =================
 [13.310 - 0.0.1] - 11/8/2013
 - Added a podspec for the SDK. You can now link to the SDK by adding "pod
-'GeotriggerSDK', :git => 'https://github.com/geoloqi/Geotrigger-SDK-iOS.git'"
+'GeotriggerSDK', :git => 'https://github.com/Esri/geotrigger-sdk-ios.git'"
 to your Podfile and running 'pod install'. The :git portion of that will be
 dropped once the spec is accepted into the official Cocoapods spec repo.
 - Removed external dependencies. You no longer need to have AFNetworking or
