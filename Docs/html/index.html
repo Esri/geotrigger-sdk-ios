@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>iOS Geotrigger SDK Reference</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="index.html">iOS Geotrigger SDK </a></h1>
+				<a id="developerHome" href="index.html">Esri</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">iOS Geotrigger SDK Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<div id="overview_contents" role="main">
+				<div class="main-navigation navigation-top">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">iOS Geotrigger SDK Reference</h1>
+					</div>		
+				</div>
+				<div id="container">
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h1>Geotrigger-iOS</h1>
+
+<p>Modular SDK for the ArcGIS Online Geotrigger Service for iOS.</p>
+
+<h2>Initial Setup</h2>
+
+<ol>
+<li>After cloning the repo you&rsquo;ll need to <code>git submodule init</code> and <code>git submodule update</code> to get the specified checkouts of <code>AFNetworking</code> and <code>CocoaLumberjack</code>.</li>
+<li>Open the workspace and hack away!</li>
+</ol>
+
+
+<h1>Project Structure Overview</h1>
+
+<h2>GeotriggerSDK</h2>
+
+<p>This project is the main project where all of the SDK source and the debug app&rsquo;s source live. You&rsquo;ll use the targets of this project to build the <a href="geotrigger-debug">debug app</a> as well as the release .framework build.</p>
+
+<p>This project has the following targets:</p>
+
+<ul>
+<li>ext - This target is used to build our external dependencies into a .a file and run the <a href="Scripts/generate_namespace_header.sh">generate_namespace_header.sh</a> script on it (see below for details).</li>
+<li>GeotriggerSDK - This target builds the .a file that will be bundled into the .framework file in the <code>Framework</code> target. It also updates the <a href="GeotriggerSDK/AGSGTBuildVersion.h">AGSGTBuildVersion.h</a> and runs the <a href="Scripts/build_doc.sh">ref doc script</a>.</li>
+<li>Framework - This target builds the .framework file with a .a file that will run on all of the architectures that we support (a universal slice), which is copied into the build folder in the source root. This .framework is the file that should be copied into the <a href="https://github.com/Esri/geotrigger-sdk-ios">public repo</a> and/or shipped to customers.</li>
+<li>geotrigger-debug - This target builds an app that can be run on a device to help with debugging specific problems or new features. This app is set up with a Provisioning Profile on the <code>geoloqi.com</code> account called <code>GeotriggerSDK Debug</code>, with tokens all set up in AGO on the <code>clientId</code> listed in the <a href="geotrigger-debug/Constants.h">Constants.h</a>. Make sure your device on that provisioning profile or your pushies won&rsquo;t work! Another thing to note is this target compiles the external dependencies itself and does not use the <code>NamespacedDependencies.h</code>. Doing it this way saves a little bit of compile time as the external dependencies only need to be compiled once this way, but it does make it slightly different than the production build. This really shouldn&rsquo;t be a problem but if you want to make it duplicate the .framework build extra hard you can configure it to do so by adding the <code>ext</code> target as a dependency in the <code>Build Phases</code> tab, and adding <code>-DNAMESPACED_BUILD=1</code> to the <code>Other C Flags</code> section in the <code>Build Settings</code> tab.</li>
+</ul>
+
+
+<h2>TestApp</h2>
+
+<p>The <a href="TestApp"><code>Test App</code></a> is the automated test runner application. It contains the tests that should always pass before you publish a new build. As you add stuff to the SDK you should run this app on a device and make sure all of the tests have a thumbs up to make sure you didn&rsquo;t break anything. Adding tests to
+it for your new functionality wouldn&rsquo;t be a bad idea either.</p>
+
+<h1>What&rsquo;s with this NamespacedDependencies.h and/or libext business?</h1>
+
+<p>We use a couple of open source libraries (<code>AFNetworking</code> and <code>CocoaLumberjack</code>) and these two things are part of how we&rsquo;re dealing with not colliding with users of our SDK who also want to use these libraries, as well as making it easier for devs who are <em>not</em> using these libs to use our SDK. It enables our users to simply drag &lsquo;n&rsquo; drop the .framework into their project and link to a few system libraries.</p>
+
+<p>The way we deal with this is to compile the libraries into the SDK with a prefix of <code>AGSGT</code>. We do this by running a script which generates a header file with
+preprocessor macros for all of the symbols that aren&rsquo;t ours or the OS&rsquo;s. We then include this header in our precompiled header so that all references to the
+symbols in these libraries will be renamed. The reason we go through these extra hoops is so that we don&rsquo;t have to do a (potentially error-prone) Find And Replace every time we want to upgrade one of these libraries, also our code still looks like it&rsquo;s just using the normal version of the libs.</p>
+
+<p>Here&rsquo;s how that all works:</p>
+
+<ol>
+<li>The <code>GeotriggerSDK</code> target has a dependency on the <code>ext</code> target, which makes sure that it is compiled before the sdk when needed.</li>
+<li>The <code>ext</code> target compiles the external dependencies into a single .a. This .a file is only used as a reference for the script which generates the namespaced
+header file. This target also has a build phase which runs that script (<a href="Scripts/generate_namespace_header.sh"><code>generate_namespace_header.sh</code></a>) after it compiles the .a.</li>
+<li>The <code>NamespacedDependencies</code> header is included in the <a href="GeotriggerSDK/GeotriggerSDK-Prefix.pch"><code>precompiled header</code></a> which is shared between both the <code>ext</code> and the <code>GeotriggerSDK</code> targets. The <code>NamespecedDependencies</code> header is only imported if the <code>NAMESPACED_BUILD</code> flag is set. This flag is set in the <code>GeotriggerSDK</code> build settings via compiler flag, and unset in the <code>ext</code> build settings the same way.</li>
+<li>The <code>GeotriggerSDK</code> target compiles the sources for these libraries into its .a (<code>libGeotriggerSDK.a</code>), but since it includes the <code>NamespacedDependencies.h</code>
+header before all of its references to them, the .a receives only prefixed/namespaced versions of these symbols.</li>
+</ol>
+
+
+<h1>So you wanna do a release build?</h1>
+
+<p><strong>NOTE</strong>: The order on these really matter, specifically where commits and tags are involved.</p>
+
+<ol>
+<li>Make sure the <a href="TestApp"><code>Test App</code></a>&rsquo;s tests all pass.</li>
+<li>Commit changes to this repo, if you haven&rsquo;t already.</li>
+<li>Add a new version tag to this repo.</li>
+<li>Run the <code>Framework</code> target.</li>
+<li>Clone the <a href="https://github.com/Esri/geotrigger-sdk-ios"><code>public repo</code></a>.</li>
+<li>Replace the <code>GeotriggerSDK.framework</code> in the public repo with the one that was generated into the build folder of this repo&rsquo;s working directory.</li>
+<li>Update the public repo&rsquo;s CHANGELOG.txt</li>
+<li>Commit the changes to the public repo.</li>
+<li>Add the same tag you added to the private repo to the public repo.</li>
+<li>Modify the sample&rsquo;s <code>Podfile</code> to point to your local clone of the public repo by replacing <code>pod "GeotriggerSDK"</code> with <code>pod "GeotriggerSDK", :path =&gt; "path/to/public/repo"</code>.</li>
+<li>Run <code>pod update</code> from the sample directory.</li>
+<li>Make sure the sample still works.</li>
+<li> :shipit: If it does, revert the <code>Podfile</code>, push your changes and pop the bubbly, it&rsquo;s release party time!</li>
+<li> :poop: If it doesn&rsquo;t&hellip; fix it. Then head back to Step 1 and start the process over again, moving the version tag(s) as necessary.</li>
+</ol>
+
+						
+						
+					</div>
+					
+                        
+                    
+					
+					
+					<div class="index-column">
+						<h2 class="index-title">Class References</h2>
+						<ul>
+							
+							<li><a href="Classes/AGSGTApiClient.html">AGSGTApiClient</a></li>
+							
+							<li><a href="Classes/AGSGTGeotriggerManager.html">AGSGTGeotriggerManager</a></li>
+							
+							<li><a href="Classes/AGSGTLocationFix.html">AGSGTLocationFix</a></li>
+							
+							<li><a href="Classes/AGSGTTriggerBuilder.html">AGSGTTriggerBuilder</a></li>
+							
+						</ul>
+					</div>
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Esri. All rights reserved. (Last updated: 2013-11-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+	
+					</div>
+				</div>
+			</div>
+		</article>		
+	</body>
+</html>
