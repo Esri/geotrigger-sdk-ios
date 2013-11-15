@@ -34,7 +34,6 @@
 		9479E208182DC5160009AFAF /* GTSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSViewController.h; sourceTree = "<group>"; };
 		9479E209182DC5160009AFAF /* GTSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSViewController.m; sourceTree = "<group>"; };
 		9479E20B182DC5160009AFAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9479E212182DC5160009AFAF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9479E228182DC74B0009AFAF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B5AED635634040E8BB2756EE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F7F977C6A93E4FE59A22A4B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +78,6 @@
 				9479E1F3182DC5160009AFAF /* Foundation.framework */,
 				9479E1F5182DC5160009AFAF /* CoreGraphics.framework */,
 				9479E1F7182DC5160009AFAF /* UIKit.framework */,
-				9479E212182DC5160009AFAF /* XCTest.framework */,
 				F7F977C6A93E4FE59A22A4B4 /* libPods.a */,
 			);
 			name = Frameworks;

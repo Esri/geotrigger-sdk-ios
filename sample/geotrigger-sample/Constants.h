@@ -1,1 +1,0 @@
-NSString * const kClientId = @"GHeB6WzcxZtIDHLW";
