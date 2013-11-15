@@ -21,6 +21,6 @@ We also add a block to the manager singleton that allows us to update our UI whe
 Then we listen for some NSNotifications that we send from the AppDelegate when we register for Push Notifications and when we receive them.
 
 ## GTSAppDelegate.m
-In [GTSAppdelegate.m](geotrigger-sample/GTSAppDelegate.m) we implement the necessary delegate methods for handling Push Notification registration and forwarding on the notifications to the Geotrigger SDK as we receive them.
+In [GTSAppDelegate.m](geotrigger-sample/GTSAppDelegate.m) we implement the necessary delegate methods for handling Push Notification registration and forwarding on the notifications to the Geotrigger SDK as we receive them.
 
 [push-notifications-docs]:https://developers.arcgis.com/geotriggers/ios-push-notifications
