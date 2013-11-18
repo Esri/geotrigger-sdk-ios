@@ -129,6 +129,6 @@ The SDK's [reference doc](Docs) is also available in this repo.
 
 [esri-site]: http://www.esri.com
 [arcgis-dev-site]: https://developers.arcgis.com
-[geotrigger-docs]: https://developers.arcgis.com/geotriggers
-[geotrigger-api-ref]: https://developers.arcgis.com/geotriggers/api-reference
+[geotrigger-docs]: https://developers.arcgis.com/geotrigger
+[geotrigger-api-ref]: https://developers.arcgis.com/geotrigger/api-reference
 [CocoaPods]: http://cocoapods.org/
