@@ -1,2 +1,0 @@
-Geotrigger-SDK-iOS
-==================

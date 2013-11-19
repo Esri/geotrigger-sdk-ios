@@ -11,9 +11,9 @@
 @class CLLocation;
 
 /**
- Helps construct an <code>NSDictionary</code> that can be used with [AGSGTApiClient](AGSGTApiClient) to create a trigger.
+ Helps construct an `NSDictionary` that can be used with [AGSGTApiClient](AGSGTApiClient) to create a trigger.
 
- See the (external) API reference for the [trigger/create](http://esri.github.io/geotrigger-docs/api/trigger/create/)
+ See the (external) API reference for the [trigger/create](https://developers.arcgis.com/geotrigger-service/api-reference/trigger-create/)
  route for more information.
  */
 @interface AGSGTTriggerBuilder : NSObject
@@ -80,10 +80,10 @@
 
   Must be one of:
 
-  - `off`
-  - `rough`
-  - `adaptive`
-  - `fine`
+  * `off`
+  * `rough`
+  * `adaptive`
+  * `fine`
 */
 @property (strong, nonatomic) NSString *trackingProfile;
 
@@ -132,7 +132,10 @@
 */
 - (void)setGeoWithEsriJson:(NSDictionary *)esriJson;
 
-/** Builds a parameters NSDictionary suitable for use with the AGSGTApiClient. */
+/** Builds a parameters NSDictionary suitable for use with the AGSGTApiClient.
+*
+* @see AGSGTApiClient postPath:parameters:success:failure:
+*/
 - (NSDictionary *)build;
 
 @end

@@ -1,5 +1,13 @@
 iOS SDK Changelog
 =================
+[0.1.0] - 11/19/2013
+- Public Beta release!
+- Added configurable logging to AGSGTGeotriggerManager via the
+setLogLevel:enableConsoleLogs:enableFileLogs: method.
+- Fixed 64-bit compiler warnings, causing some interface changes (any method
+that took `int` or `uint` parameters now take `NSInteger` or `NSUInteger`
+- Various bug fixes.
+
 [13.310 - 0.0.1] - 11/8/2013
 - Added a podspec for the SDK. You can now link to the SDK by adding "pod
 'GeotriggerSDK', :git => 'https://github.com/Esri/geotrigger-sdk-ios.git'"

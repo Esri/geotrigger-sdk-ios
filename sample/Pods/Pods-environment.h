@@ -9,6 +9,6 @@
 // GeotriggerSDK
 #define COCOAPODS_POD_AVAILABLE_GeotriggerSDK
 #define COCOAPODS_VERSION_MAJOR_GeotriggerSDK 0
-#define COCOAPODS_VERSION_MINOR_GeotriggerSDK 2
+#define COCOAPODS_VERSION_MINOR_GeotriggerSDK 1
 #define COCOAPODS_VERSION_PATCH_GeotriggerSDK 0
 

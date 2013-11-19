@@ -14,7 +14,9 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string></string>
+			<string>Copyright 2013 Esri
+
+http://www.esri.com/legal/software-license</string>
 			<key>Title</key>
 			<string>GeotriggerSDK</string>
 			<key>Type</key>

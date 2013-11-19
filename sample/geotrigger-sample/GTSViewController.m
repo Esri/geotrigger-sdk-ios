@@ -88,7 +88,7 @@
 
     // The didUploadLocations block is called every time we send locations to the Geotrigger Service. Here we are just
     // using this information to update our UI.
-    [AGSGTGeotriggerManager sharedManager].didUploadLocations = ^(int count, NSError *error) {
+    [AGSGTGeotriggerManager sharedManager].didUploadLocations = ^(NSUInteger count, NSError *error) {
         if (error == nil) {
             AGSGTLocationFix *locationFix = [AGSGTGeotriggerManager sharedManager].lastSyncedLocation;
             self.locationUpdateSentLabel.text = [NSString stringWithFormat:@"lat: %3.6f, long: %3.6f", locationFix.location.coordinate.latitude, locationFix.location.coordinate.longitude];

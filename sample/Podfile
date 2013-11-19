@@ -1,2 +1,2 @@
-# TODO: update this url when we go public. Also if/when we add the pod to the official cocoapods repo we’ll need to update this to get rid of the :git portion.
+# TODO: If/when we add the pod to the official cocoapods repo we’ll need to update this to get rid of the :git portion.
 pod 'GeotriggerSDK', :git => 'https://github.com/geoloqi/Geotrigger-SDK-iOS.git'

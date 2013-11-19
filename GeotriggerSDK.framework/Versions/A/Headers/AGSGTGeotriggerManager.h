@@ -21,10 +21,28 @@
 
 @class AGSGTLocationFix;
 
+/** @constant AGSGTGeotriggerManager kAGSGTTrackingProfile Do not track location at all. */
 static NSString * const kAGSGTTrackingProfileOff = @"off";
+/** Adaptive mode intelligently turns GPS monitoring on and off based on many factors and feedback from the server in order to get the best location accuracy to battery usage ratio. This is the mode most apps will want to be in most of the time. */
 static NSString * const kAGSGTTrackingProfileAdaptive = @"adaptive";
+/** Rough mode will use `CoreLocation`'s `Significant Location Change` mode to track user location. This mode will use the least amount of battery, but at the cost of location accuracy. */
 static NSString * const kAGSGTTrackingProfileRough = @"rough";
+/** Fine mode receives the most accurate and up to date location information at the cost of battery usage. */
 static NSString * const kAGSGTTrackingProfileFine = @"fine";
+
+/**
+* The log levels available in the Geotrigger SDK.
+*/
+typedef NS_ENUM(int, AGSGTLogLevel) {
+    /** Do not log anything. */
+    AGSGTLogLevelOff,
+    /** Only log errors. */
+    AGSGTLogLevelError,
+    /** Only log warnings and errors. */
+    AGSGTLogLevelWarn,
+    /** Enable all of the logs. Be warned, this is very chatty, and should be used for debugging only! */
+    AGSGTLogLevelDebug
+};
 
 /** <code>CLLocationManagerDelegate</code> implementation which handles the receiving and uploading of location updates to the Geotrigger Service.
 
@@ -58,9 +76,9 @@ static NSString * const kAGSGTTrackingProfileFine = @"fine";
 */
 @property(nonatomic, strong, readonly) NSString *deviceId;
 
-/** Block to be called every time the <code>CLLocationManager</code> calls <code>locationManager:didUpdateLocations:
+/** Block to be called every time the `CLLocationManager` calls `locationManager:didUpdateLocations:`
 
- The <code>NSArray</code> that it is called with will be the same one that the <code>CLLocationManager</code> passes to its delegate.
+ The `NSArray` that it is called with will be the same one that the `CLLocationManager` passes to its delegate.
  */
 @property(copy) void(^didReceiveLocationUpdates)(NSArray *locations);
 
@@ -69,11 +87,11 @@ static NSString * const kAGSGTTrackingProfileFine = @"fine";
  The block will be called with two parameters, the number of locations uploaded
  and an NSError (which will be nil on success).
  */
-@property(copy) void(^didUploadLocations)(int count, NSError *error);
+@property(copy) void(^didUploadLocations)(NSUInteger count, NSError *error);
 
 /** Block to be called every time the tracking profile is changed.
  
- The block will be called with two paramters, the previous profile and the new current profile.
+ The block will be called with two parameters, the previous profile and the new current profile.
  */
 @property(copy) void(^didChangeTrackingProfile)(NSString *old, NSString *new);
 
@@ -127,6 +145,16 @@ registerForRemoteNotifications:(UIRemoteNotificationType)notificationTypes
  to <code>application:didReceiveRemoteNotification:</code> or <code>application:didFinishLaunchingWithOptions:</code>.
  */
 - (void)handlePushNotification:(NSDictionary *)userInfo;
+
+#pragma mark Logging
+
+/** Sets the log level used by the SDK. This defaults to AGSGTLogLevelWarn
+
+  @param logLevel The AGSGTLogLevel to be used.
+  @param console Set to YES if you want the SDK to log to the console.
+  @param fileLogs Set to YES if you want the SDK to log to a file. It will log to the Library/Caches/Logs folder on the device.
+*/
+- (void)setLogLevel:(AGSGTLogLevel)logLevel enableConsoleLogs:(BOOL)console enableFileLogs:(BOOL)fileLogs;
 
 @end
 

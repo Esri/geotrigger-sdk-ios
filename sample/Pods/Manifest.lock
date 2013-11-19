@@ -1,14 +1,14 @@
 PODS:
-  - GeotriggerSDK (0.2.0)
+  - GeotriggerSDK (0.1.0)
 
 DEPENDENCIES:
-  - GeotriggerSDK (from `https://github.com/thatryana/Geotrigger-SDK-iOS.git`)
+  - GeotriggerSDK (from `../`)
 
 EXTERNAL SOURCES:
   GeotriggerSDK:
-    :git: https://github.com/thatryana/Geotrigger-SDK-iOS.git
+    :path: ../
 
 SPEC CHECKSUMS:
-  GeotriggerSDK: 6b06fffdd03607acfd6514356cb40240a81db3f2
+  GeotriggerSDK: 0337d5f1cc771845ad9ab3613d5521b80b0ec6de
 
 COCOAPODS: 0.27.1
