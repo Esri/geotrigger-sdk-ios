@@ -9,13 +9,12 @@ Pod::Spec.new do |s|
                       Geotrigger Service and provide it with accurate location data without using any
                       more of the device's battery power than absolutely necessary.
                    DESC
-  s.homepage     = "https://github.com/geoloqi/Geotrigger-SDK-iOS"
+  s.homepage     = "https://github.com/Esri/Geotrigger-SDK-iOS"
   s.author       = "Esri Portland R & D Center"
 
   # Spec
   s.platform     = :ios, "6.0"
   s.source       = { :git => "https://github.com/Esri/geotrigger-sdk-ios.git", :tag => s.version.to_s }
-  # TODO: Add a license
   s.license      = { :file => "LICENSE", :type => "Commercial" }
 
   # Frameworks
