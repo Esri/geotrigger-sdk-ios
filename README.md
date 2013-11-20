@@ -32,7 +32,7 @@ These can be found in the "Capabilities" tab when you have your app's target sel
 
 If you are using [CocoaPods] adding the Geotrigger SDK is extra easy!
 
-1. Add `pod 'GeotriggerSDK', :git => "https://github.com/Esri/geotrigger-sdk-ios.git"` to your `Podfile`.
+1. Add `pod 'GeotriggerSDK'` to your `Podfile`.
 2. Run `pod install`.
 
 This will grab the latest version of the Geotrigger SDK from github and set your project (workspace) up with all of the necessary dependencies and you're ready to go.
