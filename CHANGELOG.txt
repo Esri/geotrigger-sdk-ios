@@ -1,5 +1,9 @@
 iOS SDK Changelog
 =================
+[0.1.1] - 11/20/2013
+- Framework included in the previous build had an outdated binary. Updated
+that.
+
 [0.1.0] - 11/19/2013
 - Public Beta release!
 - Added configurable logging to AGSGTGeotriggerManager via the
