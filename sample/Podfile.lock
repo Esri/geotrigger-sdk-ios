@@ -1,14 +1,10 @@
 PODS:
-  - GeotriggerSDK (0.1.0)
+  - GeotriggerSDK (0.1.1)
 
 DEPENDENCIES:
-  - GeotriggerSDK (from `../`)
-
-EXTERNAL SOURCES:
-  GeotriggerSDK:
-    :path: ../
+  - GeotriggerSDK
 
 SPEC CHECKSUMS:
-  GeotriggerSDK: 0337d5f1cc771845ad9ab3613d5521b80b0ec6de
+  GeotriggerSDK: 900ba23a645d818e05a481c9a06319a6804b4eaf
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.28.0

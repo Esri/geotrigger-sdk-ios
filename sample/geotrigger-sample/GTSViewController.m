@@ -28,7 +28,7 @@
     // in your UIApplicationDelegate. The readyBlock will be run once the manager is ready to send updates
     // to the server.
     [AGSGTGeotriggerManager setupWithClientId:kClientId
-                              trackingProfile:kAGSGTTrackingProfileFine
+                              trackingProfile:kAGSGTTrackingProfileAdaptive
                registerForRemoteNotifications:UIRemoteNotificationTypeAlert
                                    completion:^(NSError *error) {
                                        if (error == nil) {
@@ -49,6 +49,10 @@
                                            self.managerReadyLabel.text = @"No - Error!";
                                        }
                                    }];
+
+    // Enable debug logs to the console. This spits out a lot of logs so you probably don't want to do this in a release
+    // build, but it is good for helping track down any problems you may encounter.
+    [[AGSGTGeotriggerManager sharedManager] setLogLevel:AGSGTLogLevelDebug enableConsoleLogs:YES enableFileLogs:NO];
 
     // The didReceiveLocationUpdates block is called every time the manager receive a CLLocation from the CLLocationManager.
     // You can use this block to get access to all location updates from the OS without implementing your own
