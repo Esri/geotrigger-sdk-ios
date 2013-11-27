@@ -1,5 +1,14 @@
 iOS SDK Changelog
 =================
+[0.1.2] - 11/26/2013
+- Updated format of the console logs to be more friendly and informative.
+- Removed some extraneous log entries (region monitoring) and added some more
+useful ones (network request and response) to the debug log level.
+- Added support for ObjC Modules and auto-linking Frameworks.
+- Removed the need for the -ObjC linker flag in your build settings.
+- Disabled pauseLocationUpdatesAutomatically in our instance of
+CLLocationManager.
+
 [0.1.1] - 11/20/2013
 - Framework included in the previous build had an outdated binary. Updated
 that.

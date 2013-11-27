@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # Metadata
   s.name         = "GeotriggerSDK"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "A library for using the ArcGIS Geotrigger Service with iOS."
   s.description  = <<-DESC
                       The iOS Geotrigger SDK is a set of tools to help your app communicate with the
