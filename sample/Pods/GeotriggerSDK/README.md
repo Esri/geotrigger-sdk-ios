@@ -32,7 +32,7 @@ These can be found in the "Capabilities" tab when you have your app's target sel
 
 If you are using [CocoaPods] adding the Geotrigger SDK is extra easy!
 
-1. Add `pod 'GeotriggerSDK', :git => "https://github.com/Esri/geotrigger-sdk-ios.git"` to your `Podfile`.
+1. Add `pod 'GeotriggerSDK'` to your `Podfile`.
 2. Run `pod install`.
 
 This will grab the latest version of the Geotrigger SDK from github and set your project (workspace) up with all of the necessary dependencies and you're ready to go.
@@ -41,14 +41,16 @@ If you aren't using [CocoaPods] yet you should [check it out](http://docs.cocoap
 
 ### Without Cocoapods
 
-The Geotrigger SDK relies on the following Apple system libraries, which you'll need to make sure your project links:
+1. Copy the `GeotriggerSDK.framework` file from the [GitHub repo](https://github.com/Esri/geotrigger-sdk-ios) into your project and link against it. The easiest way to do this is to simply drag and drop it from Finder into the Frameworks folder in XCode.
+2. Link in our dependencies. This can be done either of the following ways:
+  1. Setting the "Enable Modules (C and Objective-C)" and "Link Frameworks Automatically" flags to `YES` in the
+    "Apple LLVM 5.0 - Language - Modules" section of the Build Settings. These values are the defaults in XCode 5 and above.
+  1. If for some reason you can't link frameworks automatically, these are the libraries that will be required to be linked in your project:
+    * CoreLocation
+    * Security
+    * SystemConfiguration
+    * MobileCoreServices
 
-* CoreLocation
-* Security
-* SystemConfiguration
-* MobileCoreServices
-
-Once you have all of the prerequisite dependencies added to your project the only thing left to do is copy the `GeotriggerSDK.framework` file from the [GitHub repo](https://github.com/Esri/geotrigger-sdk-ios) into your project and link against it. The easiest way to do this is to simply drag and drop it from Finder into the Frameworks folder in XCode.
 
 ## Set up the GeotriggerManager
 
@@ -129,6 +131,6 @@ The SDK's [reference doc](Docs) is also available in this repo.
 
 [esri-site]: http://www.esri.com
 [arcgis-dev-site]: https://developers.arcgis.com
-[geotrigger-docs]: https://developers.arcgis.com/geotrigger-service
-[geotrigger-api-ref]: https://developers.arcgis.com/geotrigger-service/api-reference
+[geotrigger-docs]: https://developers.arcgis.com/en/geotrigger-service
+[geotrigger-api-ref]: https://developers.arcgis.com/en/geotrigger-service/api-reference
 [CocoaPods]: http://cocoapods.org/
