@@ -37,14 +37,14 @@
                                            
                                            // This is handy to test that push notifications are all set up correctly and
                                            // can work outside of the trigger process.
-                                           //[[AGSGTApiClient sharedClient] postPath:@"device/notify"
-                                           //                             parameters:@{ @"text": @"This came from device/notify", @"url": @"http://pdx.esri.com" }
-                                           //                             success:^(AFHTTPRequestOperation *req, id res) {
-                                           //                                 NSLog(@"device/notify success: %@", res);
-                                           //                             }
-                                           //                             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                           //                                 NSLog(@"device/notify failed: %@", error.userInfo);
-                                           //                             }];
+                                           [[AGSGTApiClient sharedClient] postPath:@"device/notify"
+                                                                        parameters:@{ @"text": @"This came from device/notify", @"url": @"http://pdx.esri.com" }
+                                                                        success:^(id res) {
+                                                                            NSLog(@"device/notify success: %@", res);
+                                                                        }
+                                                                        failure:^(NSError *error) {
+                                                                            NSLog(@"device/notify failed: %@", error.userInfo);
+                                                                        }];
                                        } else {
                                            self.managerReadyLabel.text = @"No - Error!";
                                        }
