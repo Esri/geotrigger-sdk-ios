@@ -1,5 +1,12 @@
 iOS SDK Changelog
 =================
+[0.2.0] - 12/10/2013
+- Fixed bug making the SDK unable to send nested JSON arrays to the server (e.g. geojson polygons, esrijson).
+- Added more logs, and move the log configuration calls to class methods on AGSGTGeotriggerManager. NOTE: This means you will need to change your calls from [[AGSGTGeotriggerManager sharedManager] setLogLevel:…] to [AGSGTGeotriggerManager setLogLevel:].
+- Changed interface for turning on file logs to be a class method by itself on AGSGTGeotriggerManager. See [AGSGTGeotriggerManager enableFileLogging:].
+- Changed handlePushNotification: to a class method on AGSGTGeotriggerManager as well. Also added a new method handlePushNotification:showAlert: to allow you to control whether or not the manager will display a UIAlertView when it handles the push notification. If you pass NO to this method and your app is launched after receiving a push notification that has a URL set, the SDK will immediately open the URL on launch rather than displaying an alert for the user to click view.
+- Fixed various other bugs.
+
 [0.1.2] - 11/26/2013
 - Updated format of the console logs to be more friendly and informative.
 - Removed some extraneous log entries (region monitoring) and added some more

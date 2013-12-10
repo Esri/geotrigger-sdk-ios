@@ -11,5 +11,6 @@
 @interface GTSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSString *managerReadyText;
 
 @end

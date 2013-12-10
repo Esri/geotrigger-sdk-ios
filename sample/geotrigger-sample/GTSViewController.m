@@ -7,7 +7,7 @@
 //
 
 #import "GTSViewController.h"
-#import "Constants.h"
+#import "GTSAppDelegate.h"
 #import <GeotriggerSDK/GeotriggerSDK.h>
 
 @interface GTSViewController ()
@@ -21,39 +21,6 @@
 {
     [super viewDidLoad];
 
-    // Set up the manager singleton with your clientId and any tracking profile you pass in here
-    // will be used to start the manager when it is ready. You can also pass in UIRemoteNotificationTypes
-    // to have the manager register your application for with Apple when it is ready to receive an APNS
-    // device token. Note, you'll have to implement application:didRegisterForRemoteNotificationsWithDeviceToken:
-    // in your UIApplicationDelegate. The readyBlock will be run once the manager is ready to send updates
-    // to the server.
-    [AGSGTGeotriggerManager setupWithClientId:kClientId
-                              trackingProfile:kAGSGTTrackingProfileAdaptive
-               registerForRemoteNotifications:UIRemoteNotificationTypeAlert
-                                   completion:^(NSError *error) {
-                                       if (error == nil) {
-                                           // Update our UI
-                                           self.managerReadyLabel.text = @"Yes";
-                                           
-                                           // This is handy to test that push notifications are all set up correctly and
-                                           // can work outside of the trigger process.
-                                           [[AGSGTApiClient sharedClient] postPath:@"device/notify"
-                                                                        parameters:@{ @"text": @"This came from device/notify", @"url": @"http://pdx.esri.com" }
-                                                                        success:^(id res) {
-                                                                            NSLog(@"device/notify success: %@", res);
-                                                                        }
-                                                                        failure:^(NSError *error) {
-                                                                            NSLog(@"device/notify failed: %@", error.userInfo);
-                                                                        }];
-                                       } else {
-                                           self.managerReadyLabel.text = @"No - Error!";
-                                       }
-                                   }];
-
-    // Enable debug logs to the console. This spits out a lot of logs so you probably don't want to do this in a release
-    // build, but it is good for helping track down any problems you may encounter.
-    [[AGSGTGeotriggerManager sharedManager] setLogLevel:AGSGTLogLevelDebug enableConsoleLogs:YES enableFileLogs:NO];
-
     // The didReceiveLocationUpdates block is called every time the manager receive a CLLocation from the CLLocationManager.
     // You can use this block to get access to all location updates from the OS without implementing your own
     // CLLocationManagerDelegate. Here we use it to create a trigger around the first location we receive which will
@@ -64,6 +31,7 @@
 
         // Update our UI
         self.locationUpdateReceivedLabel.text = [NSString stringWithFormat:@"lat: %3.6f, long: %3.6f", location.coordinate.latitude, location.coordinate.longitude];
+        self.managerReadyLabel.text = ((GTSAppDelegate *)[UIApplication sharedApplication].delegate).managerReadyText;
 
         if (!self.triggerCreated) {
             self.triggerCreated = YES;
@@ -110,6 +78,17 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(pushNotificationReceived)
                                                  name:@"pushNotificationReceived" object:nil];
+}
+
+- (IBAction)notifyClicked:(id)sender {
+    [[AGSGTApiClient sharedClient] postPath:@"device/notify"
+                                 parameters:@{ @"text": @"This came from device/notify", @"url": @"http://pdx.esri.com" }
+                                    success:^(id res) {
+                                        NSLog(@"device/notify success: %@", res);
+                                    }
+                                    failure:^(NSError *error) {
+                                        NSLog(@"device/notify failed: %@", error.userInfo);
+                                    }];
 }
 
 - (void)pushNotificationReceived {

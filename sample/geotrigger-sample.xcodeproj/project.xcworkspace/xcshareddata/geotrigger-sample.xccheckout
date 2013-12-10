@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>015D8A5E-364B-4DBD-9B07-B4D805A736D9</string>
+	<string>B364F55E-5FCC-4DE6-8E84-6FD1922372D7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>geotrigger-sample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F6095CDE-C156-4624-9D00-D2DED28613AD</key>
+		<key>04D48D84-4AD1-4D08-B011-A37B75635512</key>
 		<string>https://github.com/Esri/geotrigger-sdk-ios</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>sample/geotrigger-sample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F6095CDE-C156-4624-9D00-D2DED28613AD</key>
+		<key>04D48D84-4AD1-4D08-B011-A37B75635512</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F6095CDE-C156-4624-9D00-D2DED28613AD</string>
+	<string>04D48D84-4AD1-4D08-B011-A37B75635512</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F6095CDE-C156-4624-9D00-D2DED28613AD</string>
+			<string>04D48D84-4AD1-4D08-B011-A37B75635512</string>
 			<key>IDESourceControlWCCName</key>
 			<string>geotrigger-sdk-ios</string>
 		</dict>

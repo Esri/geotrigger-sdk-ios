@@ -35,13 +35,17 @@ static NSString * const kAGSGTTrackingProfileFine = @"fine";
 */
 typedef NS_ENUM(int, AGSGTLogLevel) {
     /** Do not log anything. */
-    AGSGTLogLevelOff,
+    AGSGTLogLevelOff = 0,
     /** Only log errors. */
-    AGSGTLogLevelError,
+    AGSGTLogLevelError = 1,
     /** Only log warnings and errors. */
-    AGSGTLogLevelWarn,
+    AGSGTLogLevelWarn = 3,
+    /** Include some additional informative logs. */
+    AGSGTLogLevelInfo = 7,
+    /** Enable debug logging. Be warned, this is very chatty, and should be used for debugging only! */
+    AGSGTLogLevelDebug = 15,
     /** Enable all of the logs. Be warned, this is very chatty, and should be used for debugging only! */
-    AGSGTLogLevelDebug
+    AGSGTLogLevelVerbose = 31
 };
 
 /** <code>CLLocationManagerDelegate</code> implementation which handles the receiving and uploading of location updates to the Geotrigger Service.
@@ -144,17 +148,27 @@ registerForRemoteNotifications:(UIRemoteNotificationType)notificationTypes
  @param userInfo The userInfo <code>NSDictionary</code> that is given with the remote notification
  to <code>application:didReceiveRemoteNotification:</code> or <code>application:didFinishLaunchingWithOptions:</code>.
  */
-- (void)handlePushNotification:(NSDictionary *)userInfo;
++ (void)handlePushNotification:(NSDictionary *)userInfo;
+
+/** Handle a push notification received from the Geotrigger service.
+ @param userInfo The userInfo <code>NSDictionary</code> that is given with the remote notification
+ to <code>application:didReceiveRemoteNotification:</code> or <code>application:didFinishLaunchingWithOptions:</code>.
+ @param showAlert Flag to tell the SDK whether it should show a UIAlertView displaying the text of the notification. If set to no, and the notification has a URL set, this method will automatically open the URL.
+ */
++ (void)handlePushNotification:(NSDictionary *)userInfo showAlert:(BOOL)showAlert;
 
 #pragma mark Logging
 
 /** Sets the log level used by the SDK. This defaults to AGSGTLogLevelWarn
 
   @param logLevel The AGSGTLogLevel to be used.
-  @param console Set to YES if you want the SDK to log to the console.
-  @param fileLogs Set to YES if you want the SDK to log to a file. It will log to the Library/Caches/Logs folder on the device.
 */
-- (void)setLogLevel:(AGSGTLogLevel)logLevel enableConsoleLogs:(BOOL)console enableFileLogs:(BOOL)fileLogs;
++ (void)setLogLevel:(AGSGTLogLevel)logLevel;
+
+/** Enables/Disables logs being written to a file on the device.
+*
+* @param enable Set to YES if you want the SDK to log to a file. It will log to the Library/Caches/Logs folder on the device.
+*/
++ (void)enableFileLogging:(BOOL)enable;
 
 @end
-

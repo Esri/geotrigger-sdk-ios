@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    <meta name="last-modified" content="2013-11-27">
+    <meta name="last-modified" content="2013-12-10">
 	  <meta name="product" content="api-geotrigger">
 	  <meta name="sub_category" content="Geotrigger Service">
 	  <meta name="sub_category_label" content="Geotrigger Service">
@@ -73,6 +73,14 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/enableFileLogging:">&nbsp;&nbsp;&nbsp;&nbsp;+ enableFileLogging:</option>
+	
+	<option value="//api/name/handlePushNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ handlePushNotification:</option>
+	
+	<option value="//api/name/handlePushNotification:showAlert:">&nbsp;&nbsp;&nbsp;&nbsp;+ handlePushNotification:showAlert:</option>
+	
+	<option value="//api/name/setLogLevel:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLogLevel:</option>
+	
 	<option value="//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:</option>
 	
 	<option value="//api/name/sharedManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedManager</option>
@@ -86,11 +94,7 @@
 	
 	<option value="//api/name/enqueueLocationUpdate:">&nbsp;&nbsp;&nbsp;&nbsp;- enqueueLocationUpdate:</option>
 	
-	<option value="//api/name/handlePushNotification:">&nbsp;&nbsp;&nbsp;&nbsp;- handlePushNotification:</option>
-	
 	<option value="//api/name/registerAPNSDeviceToken:forProduction:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- registerAPNSDeviceToken:forProduction:completion:</option>
-	
-	<option value="//api/name/setLogLevel:enableConsoleLogs:enableFileLogs:">&nbsp;&nbsp;&nbsp;&nbsp;- setLogLevel:enableConsoleLogs:enableFileLogs:</option>
 	
 	<option value="//api/name/uploadLocationQueue:">&nbsp;&nbsp;&nbsp;&nbsp;- uploadLocationQueue:</option>
 	
@@ -142,6 +146,14 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableFileLogging:">enableFileLogging:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handlePushNotification:">handlePushNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handlePushNotification:showAlert:">handlePushNotification:showAlert:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLogLevel:">setLogLevel:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:">setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedManager">sharedManager</a></span></li>
@@ -156,11 +168,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enqueueLocationUpdate:">enqueueLocationUpdate:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handlePushNotification:">handlePushNotification:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerAPNSDeviceToken:forProduction:completion:">registerAPNSDeviceToken:forProduction:completion:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLogLevel:enableConsoleLogs:enableFileLogs:">setLogLevel:enableConsoleLogs:enableFileLogs:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uploadLocationQueue:">uploadLocationQueue:</a></span></li>
 	
@@ -314,13 +322,25 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/handlePushNotification:">&ndash;&nbsp;handlePushNotification:</a></code>
+		<code><a href="#//api/name/handlePushNotification:">+&nbsp;handlePushNotification:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setLogLevel:enableConsoleLogs:enableFileLogs:">&ndash;&nbsp;setLogLevel:enableConsoleLogs:enableFileLogs:</a></code>
+		<code><a href="#//api/name/handlePushNotification:showAlert:">+&nbsp;handlePushNotification:showAlert:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLogLevel:">+&nbsp;setLogLevel:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableFileLogging:">+&nbsp;enableFileLogging:</a></code>
 	</span>
 	
 	
@@ -691,6 +711,197 @@ and an NSError (which will be nil on success).</p>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/enableFileLogging:" title="enableFileLogging:"></a>
+	<h3 class="subsubtitle method-title">enableFileLogging:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enables/Disables logs being written to a file on the device.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)enableFileLogging:(BOOL)<em>enable</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enable</em></dt>
+			<dd><p>Set to YES if you want the SDK to log to a file. It will log to the Library/Caches/Logs folder on the device.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/handlePushNotification:" title="handlePushNotification:"></a>
+	<h3 class="subsubtitle method-title">handlePushNotification:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Handle a push notification received from the Geotrigger service.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)handlePushNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>The userInfo <code>NSDictionary</code> that is given with the remote notification
+to <code>application:didReceiveRemoteNotification:</code> or <code>application:didFinishLaunchingWithOptions:</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/handlePushNotification:showAlert:" title="handlePushNotification:showAlert:"></a>
+	<h3 class="subsubtitle method-title">handlePushNotification:showAlert:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Handle a push notification received from the Geotrigger service.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)handlePushNotification:(NSDictionary *)<em>userInfo</em> showAlert:(BOOL)<em>showAlert</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>The userInfo <code>NSDictionary</code> that is given with the remote notification
+to <code>application:didReceiveRemoteNotification:</code> or <code>application:didFinishLaunchingWithOptions:</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>showAlert</em></dt>
+			<dd><p>Flag to tell the SDK whether it should show a UIAlertView displaying the text of the notification. If set to no, and the notification has a URL set, this method will automatically open the URL.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setLogLevel:" title="setLogLevel:"></a>
+	<h3 class="subsubtitle method-title">setLogLevel:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the log level used by the SDK. This defaults to AGSGTLogLevelWarn</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setLogLevel:(AGSGTLogLevel)<em>logLevel</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>logLevel</em></dt>
+			<dd><p>The <a href="../Constants/AGSGTLogLevel.html">AGSGTLogLevel</a> to be used.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:" title="setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:"></a>
 	<h3 class="subsubtitle method-title">setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:</h3>
 
@@ -879,53 +1090,6 @@ and an NSError (which will be nil on success).</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/handlePushNotification:" title="handlePushNotification:"></a>
-	<h3 class="subsubtitle method-title">handlePushNotification:</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Handle a push notification received from the Geotrigger service.</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)handlePushNotification:(NSDictionary *)<em>userInfo</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>userInfo</em></dt>
-			<dd><p>The userInfo <code>NSDictionary</code> that is given with the remote notification
-to <code>application:didReceiveRemoteNotification:</code> or <code>application:didFinishLaunchingWithOptions:</code>.</p></dd>
-		</dl>
-		
-	</div>
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/registerAPNSDeviceToken:forProduction:completion:" title="registerAPNSDeviceToken:forProduction:completion:"></a>
 	<h3 class="subsubtitle method-title">registerAPNSDeviceToken:forProduction:completion:</h3>
 
@@ -957,62 +1121,6 @@ to <code>application:didReceiveRemoteNotification:</code> or <code>application:d
 		<dl class="argument-def parameter-def">
 			<dt><em>completion</em></dt>
 			<dd><p>Block which will be called upon completion of the registration</p></dd>
-		</dl>
-		
-	</div>
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/setLogLevel:enableConsoleLogs:enableFileLogs:" title="setLogLevel:enableConsoleLogs:enableFileLogs:"></a>
-	<h3 class="subsubtitle method-title">setLogLevel:enableConsoleLogs:enableFileLogs:</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Sets the log level used by the SDK. This defaults to AGSGTLogLevelWarn</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)setLogLevel:(AGSGTLogLevel)<em>logLevel</em> enableConsoleLogs:(BOOL)<em>console</em> enableFileLogs:(BOOL)<em>fileLogs</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>logLevel</em></dt>
-			<dd><p>The <a href="../Constants/AGSGTLogLevel.html">AGSGTLogLevel</a> to be used.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>console</em></dt>
-			<dd><p>Set to YES if you want the SDK to log to the console.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>fileLogs</em></dt>
-			<dd><p>Set to YES if you want the SDK to log to a file. It will log to the Library/Caches/Logs folder on the device.</p></dd>
 		</dl>
 		
 	</div>
@@ -1099,7 +1207,7 @@ will check its tracking profile and last upload time before performing the uploa
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Esri. All rights reserved. (Last updated: 2013-11-27)</span><br />
+						<p><span class="copyright">&copy; 2013 Esri. All rights reserved. (Last updated: 2013-12-10)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

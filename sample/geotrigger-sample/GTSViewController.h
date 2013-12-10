@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *triggerFiredLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationUpdateReceivedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationUpdateSentLabel;
+@property (weak, nonatomic) IBOutlet UIButton *notifyButton;
 
 @end

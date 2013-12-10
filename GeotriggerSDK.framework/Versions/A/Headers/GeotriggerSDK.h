@@ -18,5 +18,5 @@
 #import "AGSGTTriggerBuilder.h"
 #import "AGSGTLocationFix.h"
 
-static NSString *const kAGSGTVersion = @"0.1.2";
+static NSString *const kAGSGTVersion = @"0.2.0";
 static NSString *const kAGSGTName = @"geotrigger-sdk-ios";
