@@ -107,7 +107,7 @@ tapping on the push notification will send the user straight to the URL instead.
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    [[AGSGTGeotriggerManager sharedManager] handlePushNotification:userInfo];
+    [AGSGTGeotriggerManager handlePushNotification:userInfo showAlert:YES];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -116,7 +116,7 @@ tapping on the push notification will send the user straight to the URL instead.
 
     // If we were launched from a push notification, send the payload to the Geotrigger Manager
     if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] != nil) {
-        [[AGSGTGeotriggerManager sharedManager] handlePushNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]];
+        [AGSGTGeotriggerManager handlePushNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] showAlert:NO];
     }
 
   ...
