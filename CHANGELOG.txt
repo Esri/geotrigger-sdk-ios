@@ -1,5 +1,13 @@
 iOS SDK Changelog
 =================
+[0.2.1] - 12/20/2013
+- Fixed bug causing the sharedManager property to be nil in the completion
+block of setupWithClientId:(...).
+- Only display an alert from handlePushNotification: when there is alert text
+in the userInfo data payload.
+- Add some additional log messages to the debug log level, and move some log
+messages from the debug log level to the info level.
+
 [0.2.0] - 12/10/2013
 - Fixed bug making the SDK unable to send nested JSON arrays to the server (e.g. geojson polygons, esrijson).
 - Added more logs, and move the log configuration calls to class methods on AGSGTGeotriggerManager. NOTE: This means you will need to change your calls from [[AGSGTGeotriggerManager sharedManager] setLogLevel:…] to [AGSGTGeotriggerManager setLogLevel:].

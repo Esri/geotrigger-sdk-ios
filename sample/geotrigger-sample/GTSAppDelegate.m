@@ -17,7 +17,6 @@
     // Enable debug logs to the console. This spits out a lot of logs so you probably don't want to do this in a release
     // build, but it is good for helping track down any problems you may encounter.
     [AGSGTGeotriggerManager setLogLevel:AGSGTLogLevelDebug];
-    [AGSGTGeotriggerManager enableFileLogging:YES];
 
     // Set up the manager singleton with your clientId and any tracking profile you pass in here
     // will be used to start the manager when it is ready. You can also pass in UIRemoteNotificationTypes
