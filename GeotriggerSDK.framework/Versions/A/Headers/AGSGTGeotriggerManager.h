@@ -19,8 +19,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 
-@class AGSGTLocationFix;
-
 /** @constant AGSGTGeotriggerManager kAGSGTTrackingProfile Do not track location at all. */
 static NSString * const kAGSGTTrackingProfileOff = @"off";
 /** Adaptive mode intelligently turns GPS monitoring on and off based on many factors and feedback from the server in order to get the best location accuracy to battery usage ratio. This is the mode most apps will want to be in most of the time. */
@@ -54,23 +52,11 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
  */
 @interface AGSGTGeotriggerManager : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate>
 
-/** Array of [AGSGTLocationFixes](AGSGTLocationFix) in the queue to be sent to the server during the next upload.
- */
-@property(nonatomic, copy, readonly) NSArray *queuedLocationUpdates;
-
-/** The last AGSGTLocationFix that was uploaded to the server.
- */
-@property(nonatomic, strong, readonly) AGSGTLocationFix *lastSyncedLocation;
-
 /** The tracking profile the AGSGTGeotriggerManager is currently using.
 
  This property is used to tell the AGSGTGeotriggerManager to optimize for accuracy vs battery life, or to turn off location updates completely.
  */
 @property(nonatomic, copy) NSString *trackingProfile;
-
-/** The last AGSGTLocationFix that was entered in the queue.
- */
-@property(nonatomic, strong, readonly) AGSGTLocationFix *lastEnqueuedLocation;
 
 /** The default tag of this device.
 */
@@ -80,13 +66,19 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
 */
 @property(nonatomic, strong, readonly) NSString *deviceId;
 
+/** AutoSetup makes the `AGSGTGeotriggerManager` set itself as the UIApplicationDelegate for your app and forward
+* all calls to your application's `UIApplicationDelegate`. This allows the Manager to handle push notifications and
+* traversal to and from running in the background automatically.
+*/
+@property(nonatomic, assign, readwrite, getter=isAutoSetupEnabled) BOOL autoSetupEnabled;
+
 /** Block to be called every time the `CLLocationManager` calls `locationManager:didUpdateLocations:`
 
  The `NSArray` that it is called with will be the same one that the `CLLocationManager` passes to its delegate.
  */
 @property(copy) void(^didReceiveLocationUpdates)(NSArray *locations);
 
-/** Block to be called every time [AGSGTLocationFixes](AGSGTLocationFix) are sent to the server.
+/** Block to be called every time location updates are sent to the server.
 
  The block will be called with two parameters, the number of locations uploaded
  and an NSError (which will be nil on success).
@@ -99,50 +91,60 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
  */
 @property(copy) void(^didChangeTrackingProfile)(NSString *old, NSString *new);
 
+/** Setup the manager with the given clientId.
+
+  @param clientId The Client ID to set the manager up with.
+  @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
+         or a Sandbox certificate for push notifications.
+  @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
+         there is an error encountered during that process, in which case the error parameter will be non-nil.
+ */
++ (void)setupWithClientId:(NSString *)clientId isProduction:(BOOL)isProduction completion:(void (^)(NSError *error))completion;
+
+/** Setup the manager with the given clientId and add the supplied list of tags to the device when it is created.
+
+  @param clientId The Client ID to set the manager up with.
+  @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
+         or a Sandbox certificate for push notifications.
+  @param tags An optional list of tags to be set on the device after it registers itself.
+  @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
+         there is an error encountered during that process, in which case the error parameter will be non-nil.
+ */
++ (void)setupWithClientId:(NSString *)clientId
+                  isProduction:(BOOL)isProduction
+                          tags:(NSArray *)tags
+                    completion:(void (^)(NSError *error))completion;
+
 /** Setup the manager with the given clientId and configure it with the given tracking profile
 
   @param clientId The Client ID to set the manager up with.
-  @param trackingProfile The kAGSGTTrackingProfile to configure the manager with once it is has been initialized.
-  @param notificationTypes The type(s) of UIRemoteNotifications to register with Apple for. Set this to UIRemoteNotificationTypeNone to not register for remote notifications.
+  @param trackingProfile An optional kAGSGTTrackingProfile to configure the manager with once it is has been initialized.
+  @param notificationTypes An optional type(s) of UIRemoteNotifications to register with Apple for. Set this to UIRemoteNotificationTypeNone to not register for remote notifications.
+  @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
+         or a Sandbox certificate for push notifications.
+  @param tags An optional list of tags to be set on the device after it registers itself.
   @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
          there is an error encountered during that process, in which case the error parameter will be non-nil.
  */
 + (void)setupWithClientId:(NSString *)clientId
                trackingProfile:(NSString *)trackingProfile
 registerForRemoteNotifications:(UIRemoteNotificationType)notificationTypes
+                  isProduction:(BOOL)isProduction
+                          tags:(NSArray *)tags
                     completion:(void (^)(NSError *error))completion;
 
 /** Returns the singleton geotrigger manager instance.
  */
 + (instancetype)sharedManager;
 
-#pragma mark Location Queue
-/** Clears all pending [AGSGTLocationFixes](AGSGTLocationFix) from the queue.
- */
-- (void)clearLocationQueue;
-
-/** Enqueues a AGSGTLocationFix to be uploaded on the next upload.
- 
- @param locationFix an AGSGTLocationFix to be added to the location queue.
- */
-- (void)enqueueLocationUpdate:(AGSGTLocationFix *)locationFix;
-
-/** Trigger an upload of all pending [AGSGTLocationFixes](AGSGTLocationFix)
-
- @param force If true the upload will be forced and be performed immediately, if false the AGSGTGeotriggerManager
- will check its tracking profile and last upload time before performing the upload.
- */
-- (void)uploadLocationQueue:(BOOL)force;
-
 #pragma mark Push Notifications
 
 /** Register the given token with the Geotrigger Service so that push notifications can be sent to this device.
 
     @param deviceToken The device token that is sent back to you from Apple in didRegisterForRemoteNotifications: on your app delegate.
-    @param forProduction YES if this token was registered for the production environment, NO if for the sandbox.
     @param completion Block which will be called upon completion of the registration
 */
-- (void)registerAPNSDeviceToken:(NSData *)deviceToken forProduction:(BOOL)forProduction completion:(void (^)(NSDictionary *, NSError *))completion;
+- (void)registerAPNSDeviceToken:(NSData *)deviceToken completion:(void (^)(NSDictionary *, NSError *))completion;
 
 /** Handle a push notification received from the Geotrigger service.
  @param userInfo The userInfo <code>NSDictionary</code> that is given with the remote notification

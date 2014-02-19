@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    <meta name="last-modified" content="2013-12-20">
+    <meta name="last-modified" content="2014-02-18">
 	  <meta name="product" content="api-geotrigger">
 	  <meta name="sub_category" content="Geotrigger Service">
 	  <meta name="sub_category_label" content="Geotrigger Service">
@@ -50,6 +50,8 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/autoSetupEnabled">&nbsp;&nbsp;&nbsp;&nbsp;autoSetupEnabled</option>
+	
 	<option value="//api/name/deviceDefaultTag">&nbsp;&nbsp;&nbsp;&nbsp;deviceDefaultTag</option>
 	
 	<option value="//api/name/deviceId">&nbsp;&nbsp;&nbsp;&nbsp;deviceId</option>
@@ -59,12 +61,6 @@
 	<option value="//api/name/didReceiveLocationUpdates">&nbsp;&nbsp;&nbsp;&nbsp;didReceiveLocationUpdates</option>
 	
 	<option value="//api/name/didUploadLocations">&nbsp;&nbsp;&nbsp;&nbsp;didUploadLocations</option>
-	
-	<option value="//api/name/lastEnqueuedLocation">&nbsp;&nbsp;&nbsp;&nbsp;lastEnqueuedLocation</option>
-	
-	<option value="//api/name/lastSyncedLocation">&nbsp;&nbsp;&nbsp;&nbsp;lastSyncedLocation</option>
-	
-	<option value="//api/name/queuedLocationUpdates">&nbsp;&nbsp;&nbsp;&nbsp;queuedLocationUpdates</option>
 	
 	<option value="//api/name/trackingProfile">&nbsp;&nbsp;&nbsp;&nbsp;trackingProfile</option>
 	
@@ -81,7 +77,11 @@
 	
 	<option value="//api/name/setLogLevel:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLogLevel:</option>
 	
-	<option value="//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:</option>
+	<option value="//api/name/setupWithClientId:isProduction:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ setupWithClientId:isProduction:completion:</option>
+	
+	<option value="//api/name/setupWithClientId:isProduction:tags:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ setupWithClientId:isProduction:tags:completion:</option>
+	
+	<option value="//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:</option>
 	
 	<option value="//api/name/sharedManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedManager</option>
 	
@@ -90,13 +90,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/clearLocationQueue">&nbsp;&nbsp;&nbsp;&nbsp;- clearLocationQueue</option>
-	
-	<option value="//api/name/enqueueLocationUpdate:">&nbsp;&nbsp;&nbsp;&nbsp;- enqueueLocationUpdate:</option>
-	
-	<option value="//api/name/registerAPNSDeviceToken:forProduction:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- registerAPNSDeviceToken:forProduction:completion:</option>
-	
-	<option value="//api/name/uploadLocationQueue:">&nbsp;&nbsp;&nbsp;&nbsp;- uploadLocationQueue:</option>
+	<option value="//api/name/registerAPNSDeviceToken:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- registerAPNSDeviceToken:completion:</option>
 	
 	
 	
@@ -122,6 +116,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoSetupEnabled">autoSetupEnabled</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceDefaultTag">deviceDefaultTag</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceId">deviceId</a></span></li>
@@ -131,12 +127,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveLocationUpdates">didReceiveLocationUpdates</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didUploadLocations">didUploadLocations</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastEnqueuedLocation">lastEnqueuedLocation</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastSyncedLocation">lastSyncedLocation</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/queuedLocationUpdates">queuedLocationUpdates</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/trackingProfile">trackingProfile</a></span></li>
 	
@@ -154,7 +144,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLogLevel:">setLogLevel:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:">setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setupWithClientId:isProduction:completion:">setupWithClientId:isProduction:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setupWithClientId:isProduction:tags:completion:">setupWithClientId:isProduction:tags:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:">setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedManager">sharedManager</a></span></li>
 	
@@ -164,13 +158,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearLocationQueue">clearLocationQueue</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enqueueLocationUpdate:">enqueueLocationUpdate:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerAPNSDeviceToken:forProduction:completion:">registerAPNSDeviceToken:forProduction:completion:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uploadLocationQueue:">uploadLocationQueue:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerAPNSDeviceToken:completion:">registerAPNSDeviceToken:completion:</a></span></li>
 	
 </ul></li>
 
@@ -232,25 +220,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/queuedLocationUpdates">&nbsp;&nbsp;queuedLocationUpdates</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/lastSyncedLocation">&nbsp;&nbsp;lastSyncedLocation</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/trackingProfile">&nbsp;&nbsp;trackingProfile</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/lastEnqueuedLocation">&nbsp;&nbsp;lastEnqueuedLocation</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -263,6 +233,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/deviceId">&nbsp;&nbsp;deviceId</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/autoSetupEnabled">&nbsp;&nbsp;autoSetupEnabled</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -286,7 +262,19 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:">+&nbsp;setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:</a></code>
+		<code><a href="#//api/name/setupWithClientId:isProduction:completion:">+&nbsp;setupWithClientId:isProduction:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setupWithClientId:isProduction:tags:completion:">+&nbsp;setupWithClientId:isProduction:tags:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:">+&nbsp;setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:</a></code>
 	</span>
 	
 	
@@ -298,25 +286,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/clearLocationQueue">&ndash;&nbsp;clearLocationQueue</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/enqueueLocationUpdate:">&ndash;&nbsp;enqueueLocationUpdate:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/uploadLocationQueue:">&ndash;&nbsp;uploadLocationQueue:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/registerAPNSDeviceToken:forProduction:completion:">&ndash;&nbsp;registerAPNSDeviceToken:forProduction:completion:</a></code>
+		<code><a href="#//api/name/registerAPNSDeviceToken:completion:">&ndash;&nbsp;registerAPNSDeviceToken:completion:</a></code>
 	</span>
 	
 	
@@ -356,6 +326,44 @@
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/autoSetupEnabled" title="autoSetupEnabled"></a>
+	<h3 class="subsubtitle method-title">autoSetupEnabled</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>AutoSetup makes the <code>AGSGTGeotriggerManager</code> set itself as the UIApplicationDelegate for your app and forward
+all calls to your application&rsquo;s <code>UIApplicationDelegate</code>. This allows the Manager to handle push notifications and
+traversal to and from running in the background automatically.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite, getter=isAutoSetupEnabled) BOOL autoSetupEnabled</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/deviceDefaultTag" title="deviceDefaultTag"></a>
@@ -518,7 +526,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Block to be called every time <a href="../Classes/AGSGTLocationFix.html">AGSGTLocationFixes</a> are sent to the server.</p>
+		<p>Block to be called every time location updates are sent to the server.</p>
 	</div>
 	
     
@@ -538,114 +546,6 @@
 		<p>The block will be called with two parameters, the number of locations uploaded
 and an NSError (which will be nil on success).</p>
 	</div>
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/lastEnqueuedLocation" title="lastEnqueuedLocation"></a>
-	<h3 class="subsubtitle method-title">lastEnqueuedLocation</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The last <a href="../Classes/AGSGTLocationFix.html">AGSGTLocationFix</a> that was entered in the queue.</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) AGSGTLocationFix *lastEnqueuedLocation</code></div>
-
-    
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/lastSyncedLocation" title="lastSyncedLocation"></a>
-	<h3 class="subsubtitle method-title">lastSyncedLocation</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The last <a href="../Classes/AGSGTLocationFix.html">AGSGTLocationFix</a> that was uploaded to the server.</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) AGSGTLocationFix *lastSyncedLocation</code></div>
-
-    
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/queuedLocationUpdates" title="queuedLocationUpdates"></a>
-	<h3 class="subsubtitle method-title">queuedLocationUpdates</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Array of <a href="../Classes/AGSGTLocationFix.html">AGSGTLocationFixes</a> in the queue to be sent to the server during the next upload.</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *queuedLocationUpdates</code></div>
-
-    
-	
-
-	
-
-	
-
 	
 
 	
@@ -902,8 +802,129 @@ to <code>application:didReceiveRemoteNotification:</code> or <code>application:d
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:" title="setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:"></a>
-	<h3 class="subsubtitle method-title">setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:</h3>
+	<a name="//api/name/setupWithClientId:isProduction:completion:" title="setupWithClientId:isProduction:completion:"></a>
+	<h3 class="subsubtitle method-title">setupWithClientId:isProduction:completion:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Setup the manager with the given clientId.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setupWithClientId:(NSString *)<em>clientId</em> isProduction:(BOOL)<em>isProduction</em> completion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientId</em></dt>
+			<dd><p>The Client ID to set the manager up with.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isProduction</em></dt>
+			<dd><p>A flag determining whether the application is signed with a Production/Distribution certificate
+         or a Sandbox certificate for push notifications.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
+         there is an error encountered during that process, in which case the error parameter will be non-nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setupWithClientId:isProduction:tags:completion:" title="setupWithClientId:isProduction:tags:completion:"></a>
+	<h3 class="subsubtitle method-title">setupWithClientId:isProduction:tags:completion:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Setup the manager with the given clientId and add the supplied list of tags to the device when it is created.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setupWithClientId:(NSString *)<em>clientId</em> isProduction:(BOOL)<em>isProduction</em> tags:(NSArray *)<em>tags</em> completion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientId</em></dt>
+			<dd><p>The Client ID to set the manager up with.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isProduction</em></dt>
+			<dd><p>A flag determining whether the application is signed with a Production/Distribution certificate
+         or a Sandbox certificate for push notifications.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tags</em></dt>
+			<dd><p>An optional list of tags to be set on the device after it registers itself.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
+         there is an error encountered during that process, in which case the error parameter will be non-nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:" title="setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:"></a>
+	<h3 class="subsubtitle method-title">setupWithClientId:trackingProfile:registerForRemoteNotifications:isProduction:tags:completion:</h3>
 
 	
 	
@@ -913,7 +934,7 @@ to <code>application:didReceiveRemoteNotification:</code> or <code>application:d
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)setupWithClientId:(NSString *)<em>clientId</em> trackingProfile:(NSString *)<em>trackingProfile</em> registerForRemoteNotifications:(UIRemoteNotificationType)<em>notificationTypes</em> completion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)setupWithClientId:(NSString *)<em>clientId</em> trackingProfile:(NSString *)<em>trackingProfile</em> registerForRemoteNotifications:(UIRemoteNotificationType)<em>notificationTypes</em> isProduction:(BOOL)<em>isProduction</em> tags:(NSArray *)<em>tags</em> completion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
 
     
 	
@@ -927,12 +948,23 @@ to <code>application:didReceiveRemoteNotification:</code> or <code>application:d
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>trackingProfile</em></dt>
-			<dd><p>The kAGSGTTrackingProfile to configure the manager with once it is has been initialized.</p></dd>
+			<dd><p>An optional kAGSGTTrackingProfile to configure the manager with once it is has been initialized.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>notificationTypes</em></dt>
-			<dd><p>The type(s) of UIRemoteNotifications to register with Apple for. Set this to UIRemoteNotificationTypeNone to not register for remote notifications.</p></dd>
+			<dd><p>An optional type(s) of UIRemoteNotifications to register with Apple for. Set this to UIRemoteNotificationTypeNone to not register for remote notifications.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isProduction</em></dt>
+			<dd><p>A flag determining whether the application is signed with a Production/Distribution certificate
+         or a Sandbox certificate for push notifications.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tags</em></dt>
+			<dd><p>An optional list of tags to be set on the device after it registers itself.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1008,90 +1040,8 @@ to <code>application:didReceiveRemoteNotification:</code> or <code>application:d
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/clearLocationQueue" title="clearLocationQueue"></a>
-	<h3 class="subsubtitle method-title">clearLocationQueue</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Clears all pending <a href="../Classes/AGSGTLocationFix.html">AGSGTLocationFixes</a> from the queue.</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)clearLocationQueue</code></div>
-
-    
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/enqueueLocationUpdate:" title="enqueueLocationUpdate:"></a>
-	<h3 class="subsubtitle method-title">enqueueLocationUpdate:</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Enqueues a <a href="../Classes/AGSGTLocationFix.html">AGSGTLocationFix</a> to be uploaded on the next upload.</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)enqueueLocationUpdate:(AGSGTLocationFix *)<em>locationFix</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>locationFix</em></dt>
-			<dd><p>an <a href="../Classes/AGSGTLocationFix.html">AGSGTLocationFix</a> to be added to the location queue.</p></dd>
-		</dl>
-		
-	</div>
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/registerAPNSDeviceToken:forProduction:completion:" title="registerAPNSDeviceToken:forProduction:completion:"></a>
-	<h3 class="subsubtitle method-title">registerAPNSDeviceToken:forProduction:completion:</h3>
+	<a name="//api/name/registerAPNSDeviceToken:completion:" title="registerAPNSDeviceToken:completion:"></a>
+	<h3 class="subsubtitle method-title">registerAPNSDeviceToken:completion:</h3>
 
 	
 	
@@ -1101,7 +1051,7 @@ to <code>application:didReceiveRemoteNotification:</code> or <code>application:d
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)registerAPNSDeviceToken:(NSData *)<em>deviceToken</em> forProduction:(BOOL)<em>forProduction</em> completion:(void ( ^ ) ( NSDictionary *, NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)registerAPNSDeviceToken:(NSData *)<em>deviceToken</em> completion:(void ( ^ ) ( NSDictionary *, NSError *))<em>completion</em></code></div>
 
     
 	
@@ -1114,60 +1064,8 @@ to <code>application:didReceiveRemoteNotification:</code> or <code>application:d
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>forProduction</em></dt>
-			<dd><p>YES if this token was registered for the production environment, NO if for the sandbox.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
 			<dt><em>completion</em></dt>
 			<dd><p>Block which will be called upon completion of the registration</p></dd>
-		</dl>
-		
-	</div>
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/uploadLocationQueue:" title="uploadLocationQueue:"></a>
-	<h3 class="subsubtitle method-title">uploadLocationQueue:</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Trigger an upload of all pending <a href="../Classes/AGSGTLocationFix.html">AGSGTLocationFixes</a></p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)uploadLocationQueue:(BOOL)<em>force</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>force</em></dt>
-			<dd><p>If true the upload will be forced and be performed immediately, if false the AGSGTGeotriggerManager
-will check its tracking profile and last upload time before performing the upload.</p></dd>
 		</dl>
 		
 	</div>
@@ -1207,7 +1105,7 @@ will check its tracking profile and last upload time before performing the uploa
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Esri. All rights reserved. (Last updated: 2013-12-20)</span><br />
+						<p><span class="copyright">&copy; 2014 Esri. All rights reserved. (Last updated: 2014-02-18)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

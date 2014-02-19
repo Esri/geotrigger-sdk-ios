@@ -1,5 +1,23 @@
 iOS SDK Changelog
 =================
+[1.0.0] - 2/18/2014
+- Changed AGSGTGeotriggerManager's setupWithClientId:... methods to make them
+easier to use/take fewer parameters in the majority of use cases. See
+documentation for the new forms. NOTE: This is a breaking change, you will
+need to replace any previous setWith calls with the new ones if you were using
+them in the Beta.
+- Added AutoSetupMode. This mode sets the GeotriggerManager up as the
+Application Delegate and forwards all ApplicationDelegate methods to the
+current UIApplicationDelegate. This allows the GeotriggerManager to
+automatically handle push notification registration and handling. You can
+enable/disable this functionality with [AGSGTGeotriggerManager
+sharedManager].autoSetupModeEnabled.
+- Removed some unneccessarily public classes.
+- Cache location updates to a separate file, instead of NSUserDefaults.
+- Did an overhaul of Log statements and their log levels.
+- Various battery efficiency improvements.
+- Various bug fixes.
+
 [0.2.1] - 12/20/2013
 - Fixed bug causing the sharedManager property to be nil in the completion
 block of setupWithClientId:(...).

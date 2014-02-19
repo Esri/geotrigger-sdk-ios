@@ -13,6 +13,7 @@
 @interface GTSViewController ()
 
 @property (assign, nonatomic) BOOL triggerCreated;
+@property (strong, nonatomic) NSMutableOrderedSet *locations;
 @end
 
 @implementation GTSViewController
@@ -20,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.locations = [NSMutableOrderedSet new];
 
     // The didReceiveLocationUpdates block is called every time the manager receive a CLLocation from the CLLocationManager.
     // You can use this block to get access to all location updates from the OS without implementing your own
@@ -27,11 +29,12 @@
     // fire on leaving the trigger region. On all subsequent location updates we update the UI to show the latest location
     // we've received.
     [AGSGTGeotriggerManager sharedManager].didReceiveLocationUpdates = ^(NSArray *locations) {
+        [self.locations insertObjects:locations atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, locations.count)]];
         CLLocation *location = locations[0];
 
         // Update our UI
         self.locationUpdateReceivedLabel.text = [NSString stringWithFormat:@"lat: %3.6f, long: %3.6f", location.coordinate.latitude, location.coordinate.longitude];
-        self.managerReadyLabel.text = ((GTSAppDelegate *)[UIApplication sharedApplication].delegate).managerReadyText;
+        self.managerReadyLabel.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"managerReadyText"];
 
         if (!self.triggerCreated) {
             self.triggerCreated = YES;
@@ -62,8 +65,9 @@
     // using this information to update our UI.
     [AGSGTGeotriggerManager sharedManager].didUploadLocations = ^(NSUInteger count, NSError *error) {
         if (error == nil) {
-            AGSGTLocationFix *locationFix = [AGSGTGeotriggerManager sharedManager].lastSyncedLocation;
-            self.locationUpdateSentLabel.text = [NSString stringWithFormat:@"lat: %3.6f, long: %3.6f", locationFix.location.coordinate.latitude, locationFix.location.coordinate.longitude];
+            CLLocation *location = self.locations[0];
+            self.locationUpdateSentLabel.text = [NSString stringWithFormat:@"lat: %3.6f, long: %3.6f", location.coordinate.latitude, location.coordinate.longitude];
+            [self.locations removeObjectsInRange:NSMakeRange(self.locations.count-count, count)];
         } else {
             NSLog(@"Location upload error: %@", error.userInfo);
         }

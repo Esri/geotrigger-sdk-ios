@@ -14,6 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[NSUserDefaults standardUserDefaults] setObject:@"No - not setup yet" forKey:@"managerReadyText"];
     // Enable debug logs to the console. This spits out a lot of logs so you probably don't want to do this in a release
     // build, but it is good for helping track down any problems you may encounter.
     [AGSGTGeotriggerManager setLogLevel:AGSGTLogLevelDebug];
@@ -25,14 +26,11 @@
     // in your UIApplicationDelegate. The readyBlock will be run once the manager is ready to send updates
     // to the server.
     [AGSGTGeotriggerManager setupWithClientId:kClientId
-                              trackingProfile:kAGSGTTrackingProfileAdaptive
-               registerForRemoteNotifications:UIRemoteNotificationTypeAlert
+                                 isProduction:NO
                                    completion:^(NSError *error) {
-                                       if (error == nil) {
-                                           self.managerReadyText = @"Yes";
-                                       } else {
-                                           self.managerReadyText = @"No - error!";
-                                       }
+                                       [AGSGTGeotriggerManager sharedManager].trackingProfile = kAGSGTTrackingProfileAdaptive;
+                                       NSString *managerReadyText = error == nil ? @"Yes" : @"No - error!";
+                                       [[NSUserDefaults standardUserDefaults] setObject:managerReadyText forKey:@"managerReadyText"];
                                    }];
     // If we were launched from a push notification, send the payload to the Geotrigger Manager
     if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] != nil) {
@@ -47,22 +45,10 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    // Register the device token with this device on the Geotrigger Service.
-    [[AGSGTGeotriggerManager sharedManager] registerAPNSDeviceToken:deviceToken
-                                                      forProduction:NO
-                                                         completion:^(NSDictionary *dictionary, NSError *error) {
-                                                             if (error == nil) {
-                                                                 [[NSNotificationCenter defaultCenter] postNotificationName:@"registerForRemoteNotificationsSuccess" object:nil];
-                                                             } else {
-                                                                 NSLog(@"Failed to register APNS device token: %@", error.userInfo);
-                                                                 [[NSNotificationCenter defaultCenter] postNotificationName:@"registerForRemoteNotificationsFailure" object:nil];
-                                                             }
-                                                         }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"registerForRemoteNotificationsSuccess" object:nil];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    // Forward the push notification payload on to the manager.
-    [AGSGTGeotriggerManager handlePushNotification:userInfo showAlert:YES];
     if ([userInfo[@"aps"][@"alert"] isEqualToString:@"Trigger fired!"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"pushNotificationReceived" object:nil];
     }
