@@ -54,12 +54,26 @@ If you aren't using [CocoaPods] yet you should [check it out](http://docs.cocoap
 
 ## Set up the GeotriggerManager
 
-Before you can start tracking the device's location or communicating with the Geotrigger API you'll need to set up the `AGSGTGeotriggerManager` singleton by calling `setupWithClientId:trackingProfile:registerForRemoteNotifications:completion:`.
-It is recommended you do this in your `UIApplicationDelegate`'s `application:didFinishLaunchingWithOptions:` so that the manager can be ready to go as soon as possible.
+Before you can start tracking the device's location or communicating with the Geotrigger API
+you'll need to set up the `AGSGTGeotriggerManager` singleton by calling one of the `setupWithClientId:...` methods.
+It is recommended you do this in your `UIApplicationDelegate`'s `application:didFinishLaunchingWithOptions:`
+so that the manager can be ready to go as soon as possible.
 
-If you want the manager to start sending location updates immediately, pass any `trackingProfile` value other than `kAGSGTTrackingProfileOff` to the set up method.
+The minimum required parameters to these methods are:
 
-The `registerForRemoteNotifications:` parameter can be used to tell the manager to call `[UIApplication registerForRemoteNotificationTypes]` with the `UIRemoteNotificationType` you specify once this device has been registered with the Geotrigger Service and is ready to receive the APNS Device Token. You will still have to implement a few `UIApplicationDelegate` methods to send things along to the `AGSGTGeotriggerManager`. See the "Handling Push Notification Registration" section below for more details.
+* `clientId`: Your ArcGIS Online Application's ClientId
+* `isProduction`: A boolean value signifying whether the app is built using a Production or Sandbox Provisioning Profile. This is used to tell the
+Geotrigger Server where to send push notifications.
+* `completion`: A block that will be executed once the `AGSGTGeotriggerManager` is done initializing. The `error` parameter will be `nil` if setup
+was completed successfully, or the error that was encountered otherwise.
+
+Other optional parameters include:
+
+* `tags`: Passing this parameter will cause the `AGSGTGeotriggerManager` to add the specified tags to the device automaticallly once it is ready.
+* `trackingProfile`: Passing this parameter will cause the `AGSGTGeotriggerManager` to turn on location updates automatically when it is ready using
+this profile.
+* `registerForRemoteNotifications`: This parameter allows you to modify the which `UIRemoteNotificationTypes` the `AGSGTGeotriggerManager` registers
+for. When not specified it registers for Alerts, Sounds, and Badges.
 
 Here is a common way to start the manager.
 
@@ -67,49 +81,30 @@ Here is a common way to start the manager.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     ...
-    [AGSGTGeotriggerManager setupWithClientId:@"[your clientId goes here]"
-                              trackingProfile:kAGSGTTrackingProfileAdaptive
-               registerForRemoteNotifications:UIRemoteNotificationTypeAlert
-                                   completion:^(NSError *error) {
-                                       if (error != nil) {
-                                          NSLog(@"Geotrigger Service setup encountered error: %@", error);
-                                       } else {
-                                          NSLog(@"Geotrigger Service ready to go!");
-                                       }
-                                   }];
+    [AGSGTGeotriggerManager setupWithClientId:kClientId isProduction:NO tags:@[@"test"] completion:^(NSError *error) {
+         if (error != nil) {
+             NSLog(@"Geotrigger Service setup encountered error: %@", error);
+         } else {
+             NSLog(@"Geotrigger Service ready to go!");
+
+             // Turn on location tracking in adaptive mode
+             [AGSGTGeotriggerManager sharedManager].trackingProfile = kAGSGGTTrackingProfileAdaptive;
+         }
+    }];
     ...
 }
 ```
 
 ## Handling Push Notification Registration
 
-After registering for remote notifications (either by calling the UIApplication method yourself or via the `AGSGTGeotriggerManager`)
-you'll need to send the `deviceToken` that Apple sends to your `UIApplicationDelegate` to the Geotrigger Manager so that
-we can attach it to the device on the server.
-
-The `AGSGTGeotriggerManager` also provides a default handler for push notifications which does the following when it receives the notification:
-
-* If the app is in the foreground - Displays the notification text in a `UIAlertView` with a "Close" button and a "View" button which will take the user
-to the URL in the payload if there is one. The View button only shows up if there is a URL in the payload.
-* If the app is in the background - Passing the userInfo dictionary to this handler when your app is launched in response to the user
-tapping on the push notification will send the user straight to the URL instead.
+By default when you call one of the `setupWithClientId:...` methods, `AGSGTGeotriggerManager` will set itself up to receive and handle push notifications
+automatically by becoming the primary `UIApplicationDelegate` and forwarding all `UIApplicationDelegate` methods to your `UIApplicationDelegate`. This sets it up
+so that if your app is in the foreground when a notification is received this will display the notification text in a `UIAlertView` with a "Close"
+button and a "View" button which will take the user to the URL in the payload if there is one. The View button only shows up if there is a URL in the payload.
+If you want to send the user straight to the URL when they open your app in response to a push notification you will need to add the following to your
+`application:didFinishLaunchingWithOptions:`
 
 ```objectivec
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    [[AGSGTGeotriggerManager sharedManager] registerAPNSDeviceToken:deviceToken forProduction:NO completion:nil];
-}
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-    NSLog(@"Failed to register for remote notifications: %@", error);
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-    [AGSGTGeotriggerManager handlePushNotification:userInfo showAlert:YES];
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   ...
@@ -120,6 +115,31 @@ tapping on the push notification will send the user straight to the URL instead.
     }
 
   ...
+}
+```
+
+If you need to implement custom handling of push notifications you can do so using the normal `UIApplicationDelegate` method
+(`application:didReceiveRemoteNotification:`). Be sure *not* to call the `handlePushNotification:...` methods on `AGSGTGeotriggerManager` in this
+method though, or your app will notify your user twice!
+
+If you prefer to set up push notifications manually put the following in before your call to `setupWithClientId:...`:
+
+```objectivec
+    [AGSGTGeotriggerManager sharedManager].autoSetupEnabled = NO;
+```
+
+After registering for remote notifications (either by calling the `UIApplication` method yourself or via the `AGSGTGeotriggerManager`) you’ll need to
+send the deviceToken that Apple sends to your UIApplicationDelegate to the Geotrigger Manager so that we can attach it to the device on the server.
+
+```objectivec
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [[AGSGTGeotriggerManager sharedManager] registerAPNSDeviceToken:deviceToken forProduction:NO completion:nil];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Failed to register for remote notifications: %@", error);
 }
 ```
 
