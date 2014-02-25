@@ -1,12 +1,12 @@
-# iOS Geotrigger SDK
+# Geotrigger SDK for iOS
 
 ## Overview
 
-The iOS Geotrigger SDK is a set of tools to help your app communicate with the
+The Geotrigger SDK for iOS is a set of tools to help your app communicate with the
 Geotrigger Service and provide it with accurate location data without using any
 more of the device's battery power than absolutely necessary.
 
-At the core of the iOS Geotrigger SDK is the `AGSGTGeotriggerManager`, a wrapper around iOS's native location services, which provides a set of tracking
+At the core of the Geotrigger SDK for iOS is the `AGSGTGeotriggerManager`, a wrapper around iOS's native location services, which provides a set of tracking
 profiles to support a variety of use cases while preserving battery life as much
 as possible. The `AGSGTGeotriggerManager` also handles uploading device
 locations to the Geotrigger API.

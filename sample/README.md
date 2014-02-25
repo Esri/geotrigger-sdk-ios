@@ -1,4 +1,4 @@
-# iOS Geotrigger SDK Sample App
+# Geotrigger SDK for iOS Sample App
 This app is a self contained skeleton app made to show the bare minimum of what an app would need to do to get up and running with the Geotrigger Service and SDK.
 It aims to be a reference point and test environment to verify that you have all of the non-code pieces set up correctly (i.e. Push Notifications, ArcGIS Online, etc).
 
