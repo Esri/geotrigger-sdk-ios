@@ -67,7 +67,13 @@
         if (error == nil) {
             CLLocation *location = self.locations[0];
             self.locationUpdateSentLabel.text = [NSString stringWithFormat:@"lat: %3.6f, long: %3.6f", location.coordinate.latitude, location.coordinate.longitude];
-            [self.locations removeObjectsInRange:NSMakeRange(self.locations.count-count, count)];
+            NSRange locationsToRemove;
+            if (count > self.locations.count) {
+                locationsToRemove = NSMakeRange(0, self.locations.count);
+            } else {
+                locationsToRemove = NSMakeRange(self.locations.count-count, count);
+            }
+            [self.locations removeObjectsInRange:locationsToRemove];
         } else {
             NSLog(@"Location upload error: %@", error.userInfo);
         }
