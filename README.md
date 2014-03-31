@@ -134,7 +134,7 @@ send the deviceToken that Apple sends to your UIApplicationDelegate to the Geotr
 ```objectivec
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    [[AGSGTGeotriggerManager sharedManager] registerAPNSDeviceToken:deviceToken forProduction:NO completion:nil];
+    [[AGSGTGeotriggerManager sharedManager] registerAPNSDeviceToken:deviceToken completion:nil];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
