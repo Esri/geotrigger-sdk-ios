@@ -23,4 +23,4 @@ Then we listen for some NSNotifications that we send from the AppDelegate when w
 ## GTSAppDelegate.m
 In [GTSAppDelegate.m](geotrigger-sample/GTSAppDelegate.m) we implement the necessary delegate methods for handling Push Notification registration and forwarding on the notifications to the Geotrigger SDK as we receive them.
 
-[push-notifications-docs]:https://developers.arcgis.com/geotrigger-service/ios-push-notifications
+[push-notifications-docs]:https://developers.arcgis.com/geotrigger-service/guide/ios-push-notifications/
