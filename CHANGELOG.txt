@@ -1,5 +1,16 @@
 iOS SDK Changelog
 =================
+[1.1.0] - 9/12/2014
+- Added AGSGTGeotriggerManagerDelegate protocol as an alternative to using the
+block properties on AGSGTGeotriggerManager.
+- Enable silent push notification support.
+- iOS 8 compatibility fixes. NOTE: You will need to have an entry in your
+Info.plist with the key "NSLocationAlwaysUsageDescription" and the value being
+the text you want shown when iOS prompts the user for permission to use
+location for your app. Without this key your app will not be able to receive
+location data from the device!
+- Various performance improvements and minor bug fixes.
+
 [1.0.0] - 2/18/2014
 - Changed AGSGTGeotriggerManager's setupWithClientId:... methods to make them
 easier to use/take fewer parameters in the majority of use cases. See
