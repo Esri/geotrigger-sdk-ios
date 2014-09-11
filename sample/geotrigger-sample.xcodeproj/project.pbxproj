@@ -138,6 +138,7 @@
 				ORGANIZATIONNAME = ESRI;
 				TargetAttributes = {
 					9479E1EF182DC5160009AFAF = {
+						DevelopmentTeam = Z7M43KXN32;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -295,7 +296,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "geotrigger-sample/geotrigger-sample-Prefix.pch";
 				INFOPLIST_FILE = "geotrigger-sample/geotrigger-sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -314,7 +315,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "geotrigger-sample/geotrigger-sample-Prefix.pch";
 				INFOPLIST_FILE = "geotrigger-sample/geotrigger-sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

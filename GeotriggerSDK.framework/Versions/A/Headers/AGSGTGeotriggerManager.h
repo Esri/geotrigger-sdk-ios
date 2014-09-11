@@ -28,6 +28,42 @@ static NSString * const kAGSGTTrackingProfileRough = @"rough";
 /** Fine mode receives the most accurate and up to date location information at the cost of battery usage. */
 static NSString * const kAGSGTTrackingProfileFine = @"fine";
 
+@class AGSGTGeotriggerManager;
+
+@protocol AGSGTGeotriggerManagerDelegate <NSObject>
+@optional
+
+/** Tells the delegate that new location data is available.
+
+  @param manager The `AGSGTGeotriggerManager` object that generated the event.
+  @param locations The `NSArray` that the `CLLocationManager` passed to the `AGSGTGeotriggerManager`.
+ */
+- (void)manager:(AGSGTGeotriggerManager *)manager didReceiveLocationUpdates:(NSArray *)locations;
+
+/** Tells the delegate that locations have been uploaded to the Geotrigger Service servers.
+
+  @param manager The `AGSGTGeotriggerManager` object that generated the event.
+  @param count The number of location updates that were sent to the server.
+*/
+- (void)manager:(AGSGTGeotriggerManager *)manager didUploadLocations:(NSUInteger)count;
+
+/** Tells the delegate that locations have failed to upload to the Geotrigger Service servers.
+
+  @param manager The `AGSGTGeotriggerManager` object that generated the event.
+  @param error The error that was encountered when trying to upload the locations.
+*/
+- (void)manager:(AGSGTGeotriggerManager *)manager didFailToUploadLocations:(NSError *)error;
+
+/** Tells the delegate that the Tracking Profile has been changed.
+
+  @param manager The `AGSGTGeotriggerManager` object that generated the event.
+  @param newProfile The new Tracking Profile that the `AGSGTGeotriggerManager` is using.
+  @param oldProfile The Tracking Profile that the `AGSGTGeotriggerManager` was using previously.
+*/
+- (void)manager:(AGSGTGeotriggerManager *)manager didChangeTrackingProfileTo:(NSString *)newProfile from:(NSString *)oldProfile;
+
+@end
+
 /**
 * The log levels available in the Geotrigger SDK.
 */
@@ -51,6 +87,11 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
  This object also provides hooks for you to respond to location updates and locations being sent to the server.
  */
 @interface AGSGTGeotriggerManager : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate>
+
+/**
+* The `AGSGTGeotriggerManagerDelegate` implementation that will handle all callbacks from the `AGSGTGeotriggerManager`.
+*/
+@property(nonatomic, weak) id<AGSGTGeotriggerManagerDelegate> delegate;
 
 /** The tracking profile the AGSGTGeotriggerManager is currently using.
 
@@ -119,25 +160,51 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
 
   @param clientId The Client ID to set the manager up with.
   @param trackingProfile An optional kAGSGTTrackingProfile to configure the manager with once it is has been initialized.
+  @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
+         or a Sandbox certificate for push notifications.
+  @param tags An optional list of tags to be set on the device after it registers itself.
+  @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
+         there is an error encountered during that process, in which case the error parameter will be non-nil.
+  @deprecated will be removed in the next release. Please use another setupWithClientId method.
+ */
++ (void)setupWithClientId:(NSString *)clientId
+               trackingProfile:(NSString *)trackingProfile
+                  isProduction:(BOOL)isProduction
+                          tags:(NSArray *)tags
+               completion:(void (^)(NSError *error))completion;
+
+/** Setup the manager with the given clientId and configure it with the given tracking profile
+
+  @param clientId The Client ID to set the manager up with.
+  @param trackingProfile An optional kAGSGTTrackingProfile to configure the manager with once it is has been initialized.
   @param notificationTypes An optional type(s) of UIRemoteNotifications to register with Apple for. Set this to UIRemoteNotificationTypeNone to not register for remote notifications.
   @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
          or a Sandbox certificate for push notifications.
   @param tags An optional list of tags to be set on the device after it registers itself.
   @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
          there is an error encountered during that process, in which case the error parameter will be non-nil.
+  @deprecated will be removed in the next release. Please use another setupWithClientId method.
  */
 + (void)setupWithClientId:(NSString *)clientId
                trackingProfile:(NSString *)trackingProfile
 registerForRemoteNotifications:(UIRemoteNotificationType)notificationTypes
                   isProduction:(BOOL)isProduction
                           tags:(NSArray *)tags
-                    completion:(void (^)(NSError *error))completion;
+               completion:(void (^)(NSError *error))completion __deprecated;
 
 /** Returns the singleton geotrigger manager instance.
  */
 + (instancetype)sharedManager;
 
 #pragma mark Push Notifications
+
+/** Disable pinning the SSL Certificate to a known valid certificate when communicating with the Geotrigger Service.
+*/
+- (void)disableSSLCertPinning;
+
+/** Enable pinning the SSL Certificate to a known valid certificate when communicating with the Geotrigger Service.
+*/
+- (void)enableSSLCertPinning;
 
 /** Register the given token with the Geotrigger Service so that push notifications can be sent to this device.
 

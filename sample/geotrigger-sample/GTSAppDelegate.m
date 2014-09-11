@@ -8,6 +8,7 @@
 
 #import "GTSAppDelegate.h"
 #import <GeotriggerSDK/GeotriggerSDK.h>
+#import <CoreLocation/CoreLocation.h>
 #import "Constants.h"
 
 @implementation GTSAppDelegate

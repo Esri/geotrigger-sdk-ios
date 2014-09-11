@@ -6,13 +6,21 @@
 //  Copyright (c) 2013 ESRI. All rights reserved.
 //
 
-/** A subclass of AFHTTPClient which provides access to the ArcGIS Geotrigger Service API.
+/** A subclass of AFHTTPClient which provides access to the Esri Geotrigger Service API.
  */
 @interface AGSGTApiClient : NSObject
 
 /** Returns the singleton Geotrigger API client instance.
  */
 + (instancetype)sharedClient;
+
+/** Enable pinning the SSL Certificate to a known valid certificate when communicating with the Geotrigger Service.
+*/
+- (void)enableSSLCertPinning;
+
+/** Disable pinning the SSL Certificate to a known valid certificate when communicating with the Geotrigger Service.
+*/
+- (void)disableSSLCertPinning;
 
 /** Set the token used for OAuth 2.0 Authentication with the Geotrigger Server.
  
