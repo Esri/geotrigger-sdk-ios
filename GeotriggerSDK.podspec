@@ -13,14 +13,15 @@ Pod::Spec.new do |s|
   s.author       = "Esri Portland R & D Center"
 
   # Spec
-  s.platform     = :ios, "6.1"
-  s.source       = { :git => "https://github.com/Esri/geotrigger-sdk-ios.git", :tag => s.version.to_s }
-  s.license      = { :file => "LICENSE", :type => "Commercial" }
+  s.platform          = :ios, "6.1"
+  s.source            = { :git => "https://github.com/Esri/geotrigger-sdk-ios.git", :tag => s.version.to_s }
+  s.license           = { :file => "LICENSE", :type => "Commercial" }
+  s.documentation_url = "https://developers.arcgis.com/geotrigger-service/guide/ios-getting-started/"
 
   # Frameworks
-  s.frameworks = "CoreLocation", "Foundation", "Security", "SystemConfiguration", "MobileCoreServices"
+  s.frameworks          = "CoreLocation", "Foundation", "Security", "SystemConfiguration", "MobileCoreServices"
   s.vendored_frameworks = "GeotriggerSDK.framework"
-  s.preserve_paths = "GeotriggerSDK.framework"
+  s.preserve_paths      = "GeotriggerSDK.framework"
 
   # Project settings
   s.requires_arc = true
