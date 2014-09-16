@@ -35,16 +35,6 @@ static NSString * const kAGSGTTrackingProfileFine = @"fine";
 
 /** Tells the delegate that new location data is available.
 
-  Deprecated in version 1.1.0.
-
-  @param manager The `AGSGTGeotriggerManager` object that generated the event.
-  @param locations The `NSArray` that the `CLLocationManager` passed to the `AGSGTGeotriggerManager`.
-  @deprecated Use `manager:didReceiveLocationUpdates:isOnDemand:` instead.
- */
-- (void)manager:(AGSGTGeotriggerManager *)manager didReceiveLocationUpdates:(NSArray *)locations __deprecated;
-
-/** Tells the delegate that new location data is available.
-
   @param manager The `AGSGTGeotriggerManager` object that generated the event.
   @param locations The `NSArray` that the `CLLocationManager` passed to the `AGSGTGeotriggerManager`.
   @param isOnDemand A `BOOL` that indicates whether or not the locations were obtained as a result of calling `requestOnDemandUpdate:`.

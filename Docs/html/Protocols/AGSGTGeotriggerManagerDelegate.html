@@ -58,8 +58,6 @@
 	
 	<option value="//api/name/manager:didFailToUploadLocations:">&nbsp;&nbsp;&nbsp;&nbsp;- manager:didFailToUploadLocations:</option>
 	
-	<option value="//api/name/manager:didReceiveLocationUpdates:">&nbsp;&nbsp;&nbsp;&nbsp;- manager:didReceiveLocationUpdates:</option>
-	
 	<option value="//api/name/manager:didReceiveLocationUpdates:isOnDemand:">&nbsp;&nbsp;&nbsp;&nbsp;- manager:didReceiveLocationUpdates:isOnDemand:</option>
 	
 	<option value="//api/name/manager:didUploadLocations:">&nbsp;&nbsp;&nbsp;&nbsp;- manager:didUploadLocations:</option>
@@ -95,8 +93,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager:didChangeTrackingProfileTo:from:">manager:didChangeTrackingProfileTo:from:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager:didFailToUploadLocations:">manager:didFailToUploadLocations:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager:didReceiveLocationUpdates:">manager:didReceiveLocationUpdates:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager:didReceiveLocationUpdates:isOnDemand:">manager:didReceiveLocationUpdates:isOnDemand:</a></span></li>
 	
@@ -156,12 +152,6 @@
 
 						<ul class="task-list">
 							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/manager:didReceiveLocationUpdates:">&ndash;&nbsp;manager:didReceiveLocationUpdates:</a></code>
-	</span>
-	
-	
-</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/manager:didReceiveLocationUpdates:isOnDemand:">&ndash;&nbsp;manager:didReceiveLocationUpdates:isOnDemand:</a></code>
 	</span>
@@ -294,62 +284,6 @@
 
 	
 
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
-	</div>
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/manager:didReceiveLocationUpdates:" title="manager:didReceiveLocationUpdates:"></a>
-	<h3 class="subsubtitle method-title">manager:didReceiveLocationUpdates:</h3>
-
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Tells the delegate that new location data is available. (<b class="deprecated">Deprecated:</b><span class="deprecated"> Use <code>manager:didReceiveLocationUpdates:isOnDemand:</code> instead.</span>)</p>
-	</div>
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)manager:(AGSGTGeotriggerManager *)<em>manager</em> didReceiveLocationUpdates:(NSArray *)<em>locations</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>manager</em></dt>
-			<dd><p>The <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a> object that generated the event.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>locations</em></dt>
-			<dd><p>The <code>NSArray</code> that the <code>CLLocationManager</code> passed to the <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a>.</p></dd>
-		</dl>
-		
-	</div>
-	
-
-	
-
-	
-
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>  Deprecated in version 1.1.0.</p>
-	</div>
 	
 
 	
