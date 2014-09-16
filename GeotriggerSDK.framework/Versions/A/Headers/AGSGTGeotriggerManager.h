@@ -220,6 +220,9 @@ registerForRemoteNotifications:(UIRemoteNotificationType)notificationTypes
 #pragma mark On-Demand Update
 
 /** Requests a single update. Useful for obtaining location information when the app enters the foreground.
+
+  The location update will be sent to the `didReceiveOnDemandUpdate` block or the `manager:didReceiveLocationUpdates:isOnDemand:`
+  delegate method, depending on which you have defined.
  */
 - (void)requestOnDemandUpdate;
 
