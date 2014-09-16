@@ -138,7 +138,6 @@
 				ORGANIZATIONNAME = ESRI;
 				TargetAttributes = {
 					9479E1EF182DC5160009AFAF = {
-						DevelopmentTeam = Z7M43KXN32;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
