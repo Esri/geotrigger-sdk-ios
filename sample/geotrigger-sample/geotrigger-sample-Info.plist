@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.esri.geotrigger.ios-geotrigger-sample</string>
+	<string>com.esri.geotrigger.sample-app</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -35,6 +35,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location tracking while the app is not in use, is required to trigger notifications while the app is in the background.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

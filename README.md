@@ -17,16 +17,18 @@ Below you'll find the steps required to get your app (new or existing) up and ru
 
 ## Add the Geotrigger SDK
 
-There are two ways to add the Geotrigger SDK to your project. Using [CocoaPods], or manually.
+### Prerequisites
 
-**NOTE**: If you want your app to be able to receive location updates and send them to the server while your app is not
-in the foreground you will need to enable the following "Background Modes":
+1. In order to enable location services in iOS 8 you will need to enter a message describing what your app does with the location
+information in the `NSLocationAlwaysUsageDescription` in your `Info.plist` file. This message will be shown to the user when
+the operating system first prompts them for permission to use their location. See the [Apple Documentation](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/index.html#//apple_ref/doc/uid/TP40007125-CH3-SW62) on the subject
+for more details.
+2. In order to receive location updates and send them to the server while your app is not in the foreground you will need to
+enable the following "Background Modes" which can be found in the "Capabilities" tab when you have your app's target selected in the Project Settings window:
+  * Location Updates
+  * Background Fetch
 
-* Location Updates
-* Background Fetch
-* Remote Notifications
-
-These can be found in the "Capabilities" tab when you have your app's target selected in the Project Settings window.
+There are two ways to add the Geotrigger SDK for iOS to your project -- manually or using [CocoaPods](http://cocoapods.org/).
 
 ### With Cocoapods
 
@@ -72,8 +74,6 @@ Other optional parameters include:
 * `tags`: Passing this parameter will cause the `AGSGTGeotriggerManager` to add the specified tags to the device automaticallly once it is ready.
 * `trackingProfile`: Passing this parameter will cause the `AGSGTGeotriggerManager` to turn on location updates automatically when it is ready using
 this profile.
-* `registerForRemoteNotifications`: This parameter allows you to modify the which `UIRemoteNotificationTypes` the `AGSGTGeotriggerManager` registers
-for. When not specified it registers for Alerts, Sounds, and Badges.
 
 Here is a common way to start the manager.
 
