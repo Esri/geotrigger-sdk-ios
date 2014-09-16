@@ -35,10 +35,21 @@ static NSString * const kAGSGTTrackingProfileFine = @"fine";
 
 /** Tells the delegate that new location data is available.
 
+  Deprecated in version 1.1.0.
+
   @param manager The `AGSGTGeotriggerManager` object that generated the event.
   @param locations The `NSArray` that the `CLLocationManager` passed to the `AGSGTGeotriggerManager`.
+  @deprecated Use `manager:didReceiveLocationUpdates:isOnDemand:` instead.
  */
-- (void)manager:(AGSGTGeotriggerManager *)manager didReceiveLocationUpdates:(NSArray *)locations;
+- (void)manager:(AGSGTGeotriggerManager *)manager didReceiveLocationUpdates:(NSArray *)locations __deprecated;
+
+/** Tells the delegate that new location data is available.
+
+  @param manager The `AGSGTGeotriggerManager` object that generated the event.
+  @param locations The `NSArray` that the `CLLocationManager` passed to the `AGSGTGeotriggerManager`.
+  @param isOnDemand A `BOOL` that indicates whether or not the locations were obtained as a result of calling `requestOnDemandUpdate:`.
+ */
+- (void)manager:(AGSGTGeotriggerManager *)manager didReceiveLocationUpdates:(NSArray *)locations isOnDemand:(BOOL)isOnDemand;
 
 /** Tells the delegate that locations have been uploaded to the Geotrigger Service servers.
 
@@ -119,6 +130,12 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
  */
 @property(copy) void(^didReceiveLocationUpdates)(NSArray *locations);
 
+/** Block to be called every time the `CLLocationManager` calls `locationManager:didUpdateLocations:`
+
+ The block will be called with the `CLLocation` object obtained as a result of a call to `requestOnDemandUpdate:`.
+ */
+@property(copy) void(^didReceiveOnDemandUpdate)(CLLocation *location);
+
 /** Block to be called every time location updates are sent to the server.
 
  The block will be called with two parameters, the number of locations uploaded
@@ -158,6 +175,8 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
 
 /** Setup the manager with the given clientId and configure it with the given tracking profile
 
+  Deprecated in version 1.1.0.
+
   @param clientId The Client ID to set the manager up with.
   @param trackingProfile An optional kAGSGTTrackingProfile to configure the manager with once it is has been initialized.
   @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
@@ -165,15 +184,17 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
   @param tags An optional list of tags to be set on the device after it registers itself.
   @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
          there is an error encountered during that process, in which case the error parameter will be non-nil.
-  @deprecated will be removed in the next release. Please use another setupWithClientId method.
+  @deprecated Please use another setupWithClientId method.
  */
 + (void)setupWithClientId:(NSString *)clientId
                trackingProfile:(NSString *)trackingProfile
                   isProduction:(BOOL)isProduction
                           tags:(NSArray *)tags
-               completion:(void (^)(NSError *error))completion;
+               completion:(void (^)(NSError *error))completion __deprecated;
 
 /** Setup the manager with the given clientId and configure it with the given tracking profile
+
+  Deprecated in version 1.1.0.
 
   @param clientId The Client ID to set the manager up with.
   @param trackingProfile An optional kAGSGTTrackingProfile to configure the manager with once it is has been initialized.
@@ -183,7 +204,7 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
   @param tags An optional list of tags to be set on the device after it registers itself.
   @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
          there is an error encountered during that process, in which case the error parameter will be non-nil.
-  @deprecated will be removed in the next release. Please use another setupWithClientId method.
+  @deprecated Please use another setupWithClientId method.
  */
 + (void)setupWithClientId:(NSString *)clientId
                trackingProfile:(NSString *)trackingProfile
@@ -195,6 +216,12 @@ registerForRemoteNotifications:(UIRemoteNotificationType)notificationTypes
 /** Returns the singleton geotrigger manager instance.
  */
 + (instancetype)sharedManager;
+
+#pragma mark On-Demand Update
+
+/** Requests a single update. Useful for obtaining location information when the app enters the foreground.
+ */
+- (void)requestOnDemandUpdate;
 
 #pragma mark Push Notifications
 
