@@ -3,6 +3,9 @@ iOS SDK Changelog
 [1.1.0] - 9/12/2014
 - Added AGSGTGeotriggerManagerDelegate protocol as an alternative to using the
 block properties on AGSGTGeotriggerManager.
+- Added support for getting a single location update from the device on demand
+and sending that to the server. See https://developers.arcgis.com/geotrigger-service/ios-reference/Classes/AGSGTGeotriggerManager.html#//api/name/requestOnDemandUpdate
+for details.
 - Enable silent push notification support.
 - iOS 8 compatibility fixes. NOTE: You will need to have an entry in your
 Info.plist with the key "NSLocationAlwaysUsageDescription" and the value being
