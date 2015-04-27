@@ -1,5 +1,8 @@
 iOS SDK Changelog
 =================
+[1.1.1] - 4/27/2015
+- No longer deletes other non-Geotriggers regions that are being monitored.
+
 [1.1.0] - 9/12/2014
 - Added AGSGTGeotriggerManagerDelegate protocol as an alternative to using the
 block properties on AGSGTGeotriggerManager.
