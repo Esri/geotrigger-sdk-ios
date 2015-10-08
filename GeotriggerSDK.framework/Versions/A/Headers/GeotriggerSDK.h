@@ -15,7 +15,7 @@
 // Public Headers
 #import "AGSGTApiClient.h"
 #import "AGSGTGeotriggerManager.h"
-#import "AGSGTTriggerBuilder.h"
+#import "AGSGTTrigger.h"
 
-static NSString *const kAGSGTVersion = @"1.1.0";
+static NSString *const kAGSGTVersion = @"1.2.0";
 static NSString *const kAGSGTName = @"geotrigger-sdk-ios";

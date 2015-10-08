@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@class CLLocation;
+@class AGSGTOfflineTriggerDataManager;
 
 /**
  Helps construct an `NSDictionary` that can be used with [AGSGTApiClient](AGSGTApiClient) to create a trigger.
@@ -16,19 +17,33 @@
  See the (external) API reference for the [trigger/create](https://developers.arcgis.com/geotrigger-service/api-reference/trigger-create/)
  route for more information.
  */
-@interface AGSGTTriggerBuilder : NSObject
+@interface AGSGTTrigger : NSObject
 
 /** An arbitrary ID for this trigger. */
-@property (strong, nonatomic) NSString *triggerId;
+@property (strong, nonatomic) NSString *triggerKey;
+
+/** Internal ID returned from trigger/sync, and used as offline db key. **/
+@property (assign, nonatomic) NSInteger triggerID;
+
+/** This trigger is marked for deletion. */
+@property (assign, nonatomic) BOOL deleted;
+
+@property (strong, nonatomic) NSString *sha;
+
+/** A circle representing the trigger geofence. */
+@property (strong, nonatomic) NSDictionary *geofence;
 
 /** Tag names to apply to this trigger. */
 @property (copy, nonatomic) NSArray *tags;
+
+/** Tag name to apply to this trigger. */
+@property (strong, nonatomic) NSString *tag;
 
 /** Arbitrary JSON properties for the trigger.
  *
  * This can be used to attach any extra metadata to the trigger so that it can be retrieved later.
  */
-@property (copy, nonatomic) NSDictionary *properties;
+@property (copy, nonatomic) NSDictionary *data;
 
 /** The type of bounding box that the server should return.
  *
@@ -60,7 +75,7 @@
 @property (strong, nonatomic) NSString *direction;
 
 /** The geographic region for this trigger. */
-@property (copy, nonatomic) NSDictionary *geo;
+@property (copy, nonatomic) NSDictionary *conditionGeo;
 
 /** The date that the trigger will start being active. */
 @property (strong, nonatomic) NSDate *fromTimestamp;
@@ -90,6 +105,8 @@
 
 // Notification
 
+- (NSMutableDictionary *)notification;
+
 /** The text of the notification that will be sent when this trigger is fired. */
 @property (strong, nonatomic) NSString *notificationText;
 
@@ -100,10 +117,24 @@
 @property (strong, nonatomic) NSString *notificationSound;
 
 /** The badge count that will be displayed on the app icon when the notification is received. */
-@property (assign, nonatomic) int notificationBadge;
+@property (assign, nonatomic) NSInteger notificationBadge;
+
+/** Rate limit that trigger will be fired **/
+@property (assign, nonatomic) NSInteger rateLimit;
+
+/** Times that trigger will be fired **/
+@property (assign, nonatomic) NSInteger times;
+
+@property (assign, nonatomic) NSInteger version;
 
 /** Arbitrary JSON data to be sent along with this trigger notification. */
 @property (copy, nonatomic) NSDictionary *notificationData;
+
+- (instancetype)initWithDict:(NSDictionary *)dict NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithTriggerID:(NSInteger)triggerID andDb:(AGSGTOfflineTriggerDataManager *)db;
+- (void)run;
+- (void)inflateFromDictionary:(NSDictionary *)dict;
+- (NSDictionary *)deflateToDatabaseDictionary;
 
 /** Set the geographic region for this trigger from a point and distance.
 
@@ -137,5 +168,6 @@
 * @see AGSGTApiClient postPath:parameters:success:failure:
 */
 - (NSDictionary *)build;
+- (void)insertIntoDatabase:(AGSGTOfflineTriggerDataManager *)db;
 
 @end

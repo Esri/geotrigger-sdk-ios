@@ -28,7 +28,11 @@ static NSString * const kAGSGTTrackingProfileRough = @"rough";
 /** Fine mode receives the most accurate and up to date location information at the cost of battery usage. */
 static NSString * const kAGSGTTrackingProfileFine = @"fine";
 
+static NSString *const kAGSPollTriggersSecondsDefaultsKey = @"com.esri.locationManager.pollTriggersSecondsDefaultsKey";
+static NSString *const kAGSUploadTriggerHistorySecondsDefaultsKey = @"com.esri.locationManager.uploadTriggerHistorySecondsDefaultsKey";
+
 @class AGSGTGeotriggerManager;
+@class AGSGTTriggerManager;
 
 @protocol AGSGTGeotriggerManagerDelegate <NSObject>
 @optional
@@ -94,6 +98,8 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
 */
 @property(nonatomic, weak) id<AGSGTGeotriggerManagerDelegate> delegate;
 
+@property (nonatomic, strong, readonly) AGSGTTriggerManager *triggerManager;
+
 /** The tracking profile the AGSGTGeotriggerManager is currently using.
 
  This property is used to tell the AGSGTGeotriggerManager to optimize for accuracy vs battery life, or to turn off location updates completely.
@@ -137,20 +143,51 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
  
  The block will be called with two parameters, the previous profile and the new current profile.
  */
-@property(copy) void(^didChangeTrackingProfile)(NSString *old, NSString *new);
+@property(copy) void(^didChangeTrackingProfile)(NSString *old, NSString *newProfile);
+
+/** Setup the manager with offline mode, the given clientId.
+
+ @param clientId The Client ID to set the manager up with.
+ @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
+ or a Sandbox certificate for push notifications.
+ @param isOffline Boolean that determines whether or not to use offline mode.
+ @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
+ there is an error encountered during that process, in which case the error parameter will be non-nil.
+ */
++ (void)setupWithClientId:(NSString *)clientId isProduction:(BOOL)isProduction isOffline:(BOOL)isOffline completion:(void (^)(NSError *error))completion;
+
+/** Setup the manager with offline mode, the given clientId and add the supplied list of tags to the device when it is created.
+
+ @param clientId The Client ID to set the manager up with.
+ @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
+ or a Sandbox certificate for push notifications.
+ @param tags An optional list of tags to be set on the device after it registers itself.
+ @param isOffline Boolean that determines whether or not to use offline mode.
+ @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
+ there is an error encountered during that process, in which case the error parameter will be non-nil.
+ */
++ (void)setupWithClientId:(NSString *)clientId
+             isProduction:(BOOL)isProduction
+                     tags:(NSArray *)tags
+                isOffline:(BOOL)isOffline
+               completion:(void (^)(NSError *error))completion;
 
 /** Setup the manager with the given clientId.
 
+  Deprecated in version 1.2.0.
+
   @param clientId The Client ID to set the manager up with.
   @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
          or a Sandbox certificate for push notifications.
   @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
          there is an error encountered during that process, in which case the error parameter will be non-nil.
  */
-+ (void)setupWithClientId:(NSString *)clientId isProduction:(BOOL)isProduction completion:(void (^)(NSError *error))completion;
++ (void)setupWithClientId:(NSString *)clientId isProduction:(BOOL)isProduction completion:(void (^)(NSError *error))completion __deprecated;
 
 /** Setup the manager with the given clientId and add the supplied list of tags to the device when it is created.
 
+  Deprecated in version 1.2.0.
+
   @param clientId The Client ID to set the manager up with.
   @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
          or a Sandbox certificate for push notifications.
@@ -161,47 +198,7 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
 + (void)setupWithClientId:(NSString *)clientId
                   isProduction:(BOOL)isProduction
                           tags:(NSArray *)tags
-                    completion:(void (^)(NSError *error))completion;
-
-/** Setup the manager with the given clientId and configure it with the given tracking profile
-
-  Deprecated in version 1.1.0.
-
-  @param clientId The Client ID to set the manager up with.
-  @param trackingProfile An optional kAGSGTTrackingProfile to configure the manager with once it is has been initialized.
-  @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
-         or a Sandbox certificate for push notifications.
-  @param tags An optional list of tags to be set on the device after it registers itself.
-  @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
-         there is an error encountered during that process, in which case the error parameter will be non-nil.
-  @deprecated Please use another setupWithClientId method.
- */
-+ (void)setupWithClientId:(NSString *)clientId
-               trackingProfile:(NSString *)trackingProfile
-                  isProduction:(BOOL)isProduction
-                          tags:(NSArray *)tags
-               completion:(void (^)(NSError *error))completion __deprecated;
-
-/** Setup the manager with the given clientId and configure it with the given tracking profile
-
-  Deprecated in version 1.1.0.
-
-  @param clientId The Client ID to set the manager up with.
-  @param trackingProfile An optional kAGSGTTrackingProfile to configure the manager with once it is has been initialized.
-  @param notificationTypes An optional type(s) of UIRemoteNotifications to register with Apple for. Set this to UIRemoteNotificationTypeNone to not register for remote notifications.
-  @param isProduction A flag determining whether the application is signed with a Production/Distribution certificate
-         or a Sandbox certificate for push notifications.
-  @param tags An optional list of tags to be set on the device after it registers itself.
-  @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
-         there is an error encountered during that process, in which case the error parameter will be non-nil.
-  @deprecated Please use another setupWithClientId method.
- */
-+ (void)setupWithClientId:(NSString *)clientId
-               trackingProfile:(NSString *)trackingProfile
-registerForRemoteNotifications:(UIRemoteNotificationType)notificationTypes
-                  isProduction:(BOOL)isProduction
-                          tags:(NSArray *)tags
-               completion:(void (^)(NSError *error))completion __deprecated;
+                    completion:(void (^)(NSError *error))completion __deprecated;
 
 /** Returns the singleton geotrigger manager instance.
  */
