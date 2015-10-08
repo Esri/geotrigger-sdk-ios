@@ -33,7 +33,7 @@
                                         [AGSGTGeotriggerManager sharedManager].trackingProfile = kAGSGTTrackingProfileAdaptive;
                                         NSString *managerReadyText = error == nil ? @"Yes" : @"No - error!";
                                        if(error) {
-                                           NSLog(@"Error: %@");
+                                           NSLog(@"Error: %@", error);
                                        }
                                         [[NSUserDefaults standardUserDefaults] setObject:managerReadyText forKey:@"managerReadyText"];
     }];
