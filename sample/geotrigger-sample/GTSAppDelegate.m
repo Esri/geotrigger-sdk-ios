@@ -28,11 +28,15 @@
     // to the server.
     [AGSGTGeotriggerManager setupWithClientId:kClientId
                                  isProduction:NO
+                                    isOffline:NO
                                    completion:^(NSError *error) {
-                                       [AGSGTGeotriggerManager sharedManager].trackingProfile = kAGSGTTrackingProfileAdaptive;
-                                       NSString *managerReadyText = error == nil ? @"Yes" : @"No - error!";
-                                       [[NSUserDefaults standardUserDefaults] setObject:managerReadyText forKey:@"managerReadyText"];
-                                   }];
+                                        [AGSGTGeotriggerManager sharedManager].trackingProfile = kAGSGTTrackingProfileAdaptive;
+                                        NSString *managerReadyText = error == nil ? @"Yes" : @"No - error!";
+                                       if(error) {
+                                           NSLog(@"Error: %@");
+                                       }
+                                        [[NSUserDefaults standardUserDefaults] setObject:managerReadyText forKey:@"managerReadyText"];
+    }];
     // If we were launched from a push notification, send the payload to the Geotrigger Manager
     if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] != nil) {
         [AGSGTGeotriggerManager handlePushNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] showAlert:NO];

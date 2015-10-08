@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F444EF81BC6F3E800106C2E /* GeotriggerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F444EF71BC6F3E800106C2E /* GeotriggerSDK.framework */; settings = {ASSET_TAGS = (); }; };
+		0F444F061BC6F91400106C2E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F444EFF1BC6F7C300106C2E /* libz.tbd */; };
+		0F444F071BC6F91600106C2E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F444EFD1BC6F7AD00106C2E /* libxml2.tbd */; };
+		0F444F081BC6F91800106C2E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F444EFB1BC6F7A300106C2E /* libiconv.tbd */; };
+		0F444F091BC6F91900106C2E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F444EF91BC6F78500106C2E /* libc++.tbd */; };
 		9479E1F4182DC5160009AFAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9479E1F3182DC5160009AFAF /* Foundation.framework */; };
 		9479E1F6182DC5160009AFAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9479E1F5182DC5160009AFAF /* CoreGraphics.framework */; };
 		9479E1F8182DC5160009AFAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9479E1F7182DC5160009AFAF /* UIKit.framework */; };
@@ -16,10 +21,14 @@
 		9479E207182DC5160009AFAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9479E205182DC5160009AFAF /* Main.storyboard */; };
 		9479E20A182DC5160009AFAF /* GTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9479E209182DC5160009AFAF /* GTSViewController.m */; };
 		9479E20C182DC5160009AFAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9479E20B182DC5160009AFAF /* Images.xcassets */; };
-		948B3C1E18B445B0006D3F00 /* GeotriggerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948B3C1D18B445B0006D3F00 /* GeotriggerSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F444EF71BC6F3E800106C2E /* GeotriggerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GeotriggerSDK.framework; path = ../GeotriggerSDK.framework; sourceTree = "<group>"; };
+		0F444EF91BC6F78500106C2E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		0F444EFB1BC6F7A300106C2E /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		0F444EFD1BC6F7AD00106C2E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		0F444EFF1BC6F7C300106C2E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		9479E1F0182DC5160009AFAF /* geotrigger-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geotrigger-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9479E1F3182DC5160009AFAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9479E1F5182DC5160009AFAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -35,7 +44,6 @@
 		9479E209182DC5160009AFAF /* GTSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSViewController.m; sourceTree = "<group>"; };
 		9479E20B182DC5160009AFAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9479E228182DC74B0009AFAF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		948B3C1D18B445B0006D3F00 /* GeotriggerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GeotriggerSDK.framework; path = ../GeotriggerSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,10 +51,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				948B3C1E18B445B0006D3F00 /* GeotriggerSDK.framework in Frameworks */,
+				0F444EF81BC6F3E800106C2E /* GeotriggerSDK.framework in Frameworks */,
 				9479E1F6182DC5160009AFAF /* CoreGraphics.framework in Frameworks */,
 				9479E1F8182DC5160009AFAF /* UIKit.framework in Frameworks */,
 				9479E1F4182DC5160009AFAF /* Foundation.framework in Frameworks */,
+				0F444F061BC6F91400106C2E /* libz.tbd in Frameworks */,
+				0F444F071BC6F91600106C2E /* libxml2.tbd in Frameworks */,
+				0F444F081BC6F91800106C2E /* libiconv.tbd in Frameworks */,
+				0F444F091BC6F91900106C2E /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +85,11 @@
 		9479E1F2182DC5160009AFAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				948B3C1D18B445B0006D3F00 /* GeotriggerSDK.framework */,
+				0F444EFF1BC6F7C300106C2E /* libz.tbd */,
+				0F444EFD1BC6F7AD00106C2E /* libxml2.tbd */,
+				0F444EFB1BC6F7A300106C2E /* libiconv.tbd */,
+				0F444EF91BC6F78500106C2E /* libc++.tbd */,
+				0F444EF71BC6F3E800106C2E /* GeotriggerSDK.framework */,
 				9479E1F3182DC5160009AFAF /* Foundation.framework */,
 				9479E1F5182DC5160009AFAF /* CoreGraphics.framework */,
 				9479E1F7182DC5160009AFAF /* UIKit.framework */,
