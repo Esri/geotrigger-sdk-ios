@@ -1,5 +1,11 @@
 iOS SDK Changelog
 =================
+[1.2.0] - 10/12/2015
+- Adds "offline" mode to support running triggers with no network connection
+- In offline mode, uses a local geometry library to calculate polygon crossings
+- Uses iOS background sync APIs to optimize network requests
+- Notifications in offline mode do not require configuring push notification certificates
+
 [1.1.1] - 4/27/2015
 - No longer deletes other non-Geotriggers regions that are being monitored.
 
