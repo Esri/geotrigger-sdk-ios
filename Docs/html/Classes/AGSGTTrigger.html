@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    <meta name="last-modified" content="2015-10-08">
+    <meta name="last-modified" content="2015-10-13">
 	  <meta name="product" content="api-geotrigger">
 	  <meta name="sub_category" content="Geotrigger Service">
 	  <meta name="sub_category_label" content="Geotrigger Service">
@@ -13,11 +13,11 @@
 	  <meta name="subject_label" content="MOBILE">
 	  <meta name="content-language" content="en">
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title></title>
+		<title>AGSGTTrigger Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -27,7 +27,7 @@
 			</div>
 
 			<div id="title" role="banner">
-				<h1 class="hideInXcode"></h1>
+				<h1 class="hideInXcode">AGSGTTrigger Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,9 +37,99 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/boundingBoxReturnFormat">&nbsp;&nbsp;&nbsp;&nbsp;boundingBoxReturnFormat</option>
+	
+	<option value="//api/name/callbackUrl">&nbsp;&nbsp;&nbsp;&nbsp;callbackUrl</option>
+	
+	<option value="//api/name/conditionGeo">&nbsp;&nbsp;&nbsp;&nbsp;conditionGeo</option>
+	
+	<option value="//api/name/data">&nbsp;&nbsp;&nbsp;&nbsp;data</option>
+	
+	<option value="//api/name/deleted">&nbsp;&nbsp;&nbsp;&nbsp;deleted</option>
+	
+	<option value="//api/name/direction">&nbsp;&nbsp;&nbsp;&nbsp;direction</option>
+	
+	<option value="//api/name/fromTimestamp">&nbsp;&nbsp;&nbsp;&nbsp;fromTimestamp</option>
+	
+	<option value="//api/name/geoReturnFormat">&nbsp;&nbsp;&nbsp;&nbsp;geoReturnFormat</option>
+	
+	<option value="//api/name/geofence">&nbsp;&nbsp;&nbsp;&nbsp;geofence</option>
+	
+	<option value="//api/name/notificationBadge">&nbsp;&nbsp;&nbsp;&nbsp;notificationBadge</option>
+	
+	<option value="//api/name/notificationData">&nbsp;&nbsp;&nbsp;&nbsp;notificationData</option>
+	
+	<option value="//api/name/notificationSound">&nbsp;&nbsp;&nbsp;&nbsp;notificationSound</option>
+	
+	<option value="//api/name/notificationText">&nbsp;&nbsp;&nbsp;&nbsp;notificationText</option>
+	
+	<option value="//api/name/notificationUrl">&nbsp;&nbsp;&nbsp;&nbsp;notificationUrl</option>
+	
+	<option value="//api/name/rateLimit">&nbsp;&nbsp;&nbsp;&nbsp;rateLimit</option>
+	
+	<option value="//api/name/sha">&nbsp;&nbsp;&nbsp;&nbsp;sha</option>
+	
+	<option value="//api/name/tag">&nbsp;&nbsp;&nbsp;&nbsp;tag</option>
+	
+	<option value="//api/name/tags">&nbsp;&nbsp;&nbsp;&nbsp;tags</option>
+	
+	<option value="//api/name/times">&nbsp;&nbsp;&nbsp;&nbsp;times</option>
+	
+	<option value="//api/name/toTimestamp">&nbsp;&nbsp;&nbsp;&nbsp;toTimestamp</option>
+	
+	<option value="//api/name/trackingProfile">&nbsp;&nbsp;&nbsp;&nbsp;trackingProfile</option>
+	
+	<option value="//api/name/triggerID">&nbsp;&nbsp;&nbsp;&nbsp;triggerID</option>
+	
+	<option value="//api/name/triggerKey">&nbsp;&nbsp;&nbsp;&nbsp;triggerKey</option>
+	
+	<option value="//api/name/version">&nbsp;&nbsp;&nbsp;&nbsp;version</option>
+	
+	
 
 	
 
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/build">&nbsp;&nbsp;&nbsp;&nbsp;- build</option>
+	
+	<option value="//api/name/deflateToDatabaseDictionary">&nbsp;&nbsp;&nbsp;&nbsp;- deflateToDatabaseDictionary</option>
+	
+	<option value="//api/name/inflateFromDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- inflateFromDictionary:</option>
+	
+	<option value="//api/name/initWithDict:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDict:</option>
+	
+	<option value="//api/name/initWithTriggerID:andDb:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithTriggerID:andDb:</option>
+	
+	<option value="//api/name/insertIntoDatabase:">&nbsp;&nbsp;&nbsp;&nbsp;- insertIntoDatabase:</option>
+	
+	<option value="//api/name/notification">&nbsp;&nbsp;&nbsp;&nbsp;- notification</option>
+	
+	<option value="//api/name/run">&nbsp;&nbsp;&nbsp;&nbsp;- run</option>
+	
+	<option value="//api/name/setGeoWithEsriJson:">&nbsp;&nbsp;&nbsp;&nbsp;- setGeoWithEsriJson:</option>
+	
+	<option value="//api/name/setGeoWithGeoJson:">&nbsp;&nbsp;&nbsp;&nbsp;- setGeoWithGeoJson:</option>
+	
+	<option value="//api/name/setGeoWithLatitude:longitude:distance:">&nbsp;&nbsp;&nbsp;&nbsp;- setGeoWithLatitude:longitude:distance:</option>
+	
+	<option value="//api/name/setGeoWithLocation:distance:">&nbsp;&nbsp;&nbsp;&nbsp;- setGeoWithLocation:distance:</option>
+	
+	
 	
 </select>
 				</li>
@@ -48,15 +138,109 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
 
 
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/boundingBoxReturnFormat">boundingBoxReturnFormat</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callbackUrl">callbackUrl</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/conditionGeo">conditionGeo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/data">data</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleted">deleted</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/direction">direction</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fromTimestamp">fromTimestamp</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/geoReturnFormat">geoReturnFormat</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/geofence">geofence</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/notificationBadge">notificationBadge</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/notificationData">notificationData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/notificationSound">notificationSound</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/notificationText">notificationText</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/notificationUrl">notificationUrl</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rateLimit">rateLimit</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sha">sha</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tag">tag</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tags">tags</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/times">times</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/toTimestamp">toTimestamp</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/trackingProfile">trackingProfile</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/triggerID">triggerID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/triggerKey">triggerKey</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/version">version</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/build">build</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deflateToDatabaseDictionary">deflateToDatabaseDictionary</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inflateFromDictionary:">inflateFromDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDict:">initWithDict:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTriggerID:andDb:">initWithTriggerID:andDb:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertIntoDatabase:">insertIntoDatabase:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/notification">notification</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/run">run</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setGeoWithEsriJson:">setGeoWithEsriJson:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setGeoWithGeoJson:">setGeoWithGeoJson:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setGeoWithLatitude:longitude:distance:">setGeoWithLatitude:longitude:distance:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setGeoWithLocation:distance:">setGeoWithLocation:distance:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="" name="top"></a>
+				<a title="AGSGTTrigger Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -65,16 +249,1478 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header"></h1>
+						<h1 class="title title-header">AGSGTTrigger Class Reference</h1>
 					</div>
 				</div>
 				<div id="container">
 					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">AGSGTTrigger.h</td>
+</tr>
+						</tbody></table></div>
+					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Helps construct an <code>NSDictionary</code> that can be used with <a href="../Classes/AGSGTApiClient.html">AGSGTApiClient</a> to create a trigger.</p>
+
+<p>See the (external) API reference for the <a href="https://developers.arcgis.com/geotrigger-service/api-reference/trigger-create/">trigger/create</a>
+route for more information.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/triggerKey">&nbsp;&nbsp;triggerKey</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/triggerID">&nbsp;&nbsp;triggerID</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleted">&nbsp;&nbsp;deleted</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sha">&nbsp;&nbsp;sha</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/geofence">&nbsp;&nbsp;geofence</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tags">&nbsp;&nbsp;tags</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tag">&nbsp;&nbsp;tag</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/data">&nbsp;&nbsp;data</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/boundingBoxReturnFormat">&nbsp;&nbsp;boundingBoxReturnFormat</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/geoReturnFormat">&nbsp;&nbsp;geoReturnFormat</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/direction">&nbsp;&nbsp;direction</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/conditionGeo">&nbsp;&nbsp;conditionGeo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fromTimestamp">&nbsp;&nbsp;fromTimestamp</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/toTimestamp">&nbsp;&nbsp;toTimestamp</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callbackUrl">&nbsp;&nbsp;callbackUrl</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/trackingProfile">&nbsp;&nbsp;trackingProfile</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/notification">&ndash;&nbsp;notification</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/notificationText">&nbsp;&nbsp;notificationText</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/notificationUrl">&nbsp;&nbsp;notificationUrl</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/notificationSound">&nbsp;&nbsp;notificationSound</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/notificationBadge">&nbsp;&nbsp;notificationBadge</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rateLimit">&nbsp;&nbsp;rateLimit</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/times">&nbsp;&nbsp;times</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/version">&nbsp;&nbsp;version</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/notificationData">&nbsp;&nbsp;notificationData</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithDict:">&ndash;&nbsp;initWithDict:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithTriggerID:andDb:">&ndash;&nbsp;initWithTriggerID:andDb:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/run">&ndash;&nbsp;run</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/inflateFromDictionary:">&ndash;&nbsp;inflateFromDictionary:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deflateToDatabaseDictionary">&ndash;&nbsp;deflateToDatabaseDictionary</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setGeoWithLocation:distance:">&ndash;&nbsp;setGeoWithLocation:distance:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setGeoWithLatitude:longitude:distance:">&ndash;&nbsp;setGeoWithLatitude:longitude:distance:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setGeoWithGeoJson:">&ndash;&nbsp;setGeoWithGeoJson:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setGeoWithEsriJson:">&ndash;&nbsp;setGeoWithEsriJson:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/build">&ndash;&nbsp;build</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/insertIntoDatabase:">&ndash;&nbsp;insertIntoDatabase:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/boundingBoxReturnFormat" title="boundingBoxReturnFormat"></a>
+	<h3 class="subsubtitle method-title">boundingBoxReturnFormat</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The type of bounding box that the server should return.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *boundingBoxReturnFormat</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Must be one of:</p>
+
+<ul>
+<li><code>geojson</code></li>
+<li><code>esrijson</code></li>
+</ul>
+
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/callbackUrl" title="callbackUrl"></a>
+	<h3 class="subsubtitle method-title">callbackUrl</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The URL that will be notified when this trigger is fired.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSURL *callbackUrl</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback URLs can be used to execute custom logic on your own server when this trigger is fired.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/conditionGeo" title="conditionGeo"></a>
+	<h3 class="subsubtitle method-title">conditionGeo</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The geographic region for this trigger.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSDictionary *conditionGeo</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/data" title="data"></a>
+	<h3 class="subsubtitle method-title">data</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Arbitrary JSON properties for the trigger.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSDictionary *data</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This can be used to attach any extra metadata to the trigger so that it can be retrieved later.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleted" title="deleted"></a>
+	<h3 class="subsubtitle method-title">deleted</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This trigger is marked for deletion.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) BOOL deleted</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/direction" title="direction"></a>
+	<h3 class="subsubtitle method-title">direction</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The direction condition for this trigger.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *direction</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Must be one of:</p>
+
+<ul>
+<li><code>enter</code></li>
+<li><code>leave</code></li>
+</ul>
+
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fromTimestamp" title="fromTimestamp"></a>
+	<h3 class="subsubtitle method-title">fromTimestamp</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The date that the trigger will start being active.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSDate *fromTimestamp</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/geoReturnFormat" title="geoReturnFormat"></a>
+	<h3 class="subsubtitle method-title">geoReturnFormat</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The type of geometry that the server should return.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *geoReturnFormat</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Must be one of:</p>
+
+<ul>
+<li><code>geojson</code></li>
+<li><code>esrijson</code></li>
+</ul>
+
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/geofence" title="geofence"></a>
+	<h3 class="subsubtitle method-title">geofence</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A circle representing the trigger geofence.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSDictionary *geofence</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/notificationBadge" title="notificationBadge"></a>
+	<h3 class="subsubtitle method-title">notificationBadge</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The badge count that will be displayed on the app icon when the <a href="#//api/name/notification">notification</a> is received.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger notificationBadge</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/notificationData" title="notificationData"></a>
+	<h3 class="subsubtitle method-title">notificationData</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Arbitrary JSON <a href="#//api/name/data">data</a> to be sent along with this trigger <a href="#//api/name/notification">notification</a>.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSDictionary *notificationData</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/notificationSound" title="notificationSound"></a>
+	<h3 class="subsubtitle method-title">notificationSound</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The name of the sound to be played when the <a href="#//api/name/notification">notification</a> is received.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *notificationSound</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/notificationText" title="notificationText"></a>
+	<h3 class="subsubtitle method-title">notificationText</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The text of the <a href="#//api/name/notification">notification</a> that will be sent when this trigger is fired.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *notificationText</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/notificationUrl" title="notificationUrl"></a>
+	<h3 class="subsubtitle method-title">notificationUrl</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The URL to be opened when the <a href="#//api/name/notification">notification</a> is tapped.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSURL *notificationUrl</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rateLimit" title="rateLimit"></a>
+	<h3 class="subsubtitle method-title">rateLimit</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Rate limit that trigger will be fired *</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger rateLimit</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sha" title="sha"></a>
+	<h3 class="subsubtitle method-title">sha</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *sha</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tag" title="tag"></a>
+	<h3 class="subsubtitle method-title">tag</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tag name to apply to this trigger.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *tag</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tags" title="tags"></a>
+	<h3 class="subsubtitle method-title">tags</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tag names to apply to this trigger.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSArray *tags</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/times" title="times"></a>
+	<h3 class="subsubtitle method-title">times</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Times that trigger will be fired *</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger times</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/toTimestamp" title="toTimestamp"></a>
+	<h3 class="subsubtitle method-title">toTimestamp</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The date that the trigger will stop being active.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSDate *toTimestamp</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/trackingProfile" title="trackingProfile"></a>
+	<h3 class="subsubtitle method-title">trackingProfile</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The tracking profile that a device will switch to when it activates this trigger.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *trackingProfile</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>  Must be one of:</p>
+
+<ul>
+<li><code>off</code></li>
+<li><code>rough</code></li>
+<li><code>adaptive</code></li>
+<li><code>fine</code></li>
+</ul>
+
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/triggerID" title="triggerID"></a>
+	<h3 class="subsubtitle method-title">triggerID</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Internal ID returned from trigger/sync, and used as offline db key. *</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger triggerID</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/triggerKey" title="triggerKey"></a>
+	<h3 class="subsubtitle method-title">triggerKey</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An arbitrary ID for this trigger.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *triggerKey</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/version" title="version"></a>
+	<h3 class="subsubtitle method-title">version</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger version</code></div>
+
+    
+</div>
+						
+					</div>
+					
 
 					
 
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/build" title="build"></a>
+	<h3 class="subsubtitle method-title">build</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Builds a parameters NSDictionary suitable for use with the <a href="../Classes/AGSGTApiClient.html">AGSGTApiClient</a>.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)build</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Classes/AGSGTApiClient.html">AGSGTApiClient</a> postPath:parameters:success:failure:</p></code></li>
+			
+		</ul>
+	</div>
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deflateToDatabaseDictionary" title="deflateToDatabaseDictionary"></a>
+	<h3 class="subsubtitle method-title">deflateToDatabaseDictionary</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)deflateToDatabaseDictionary</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/inflateFromDictionary:" title="inflateFromDictionary:"></a>
+	<h3 class="subsubtitle method-title">inflateFromDictionary:</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)inflateFromDictionary:(NSDictionary *)<em>dict</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithDict:" title="initWithDict:"></a>
+	<h3 class="subsubtitle method-title">initWithDict:</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithDict:(NSDictionary *)<em>dict</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithTriggerID:andDb:" title="initWithTriggerID:andDb:"></a>
+	<h3 class="subsubtitle method-title">initWithTriggerID:andDb:</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithTriggerID:(NSInteger)<em>triggerID</em> andDb:(AGSGTOfflineTriggerDataManager *)<em>db</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/insertIntoDatabase:" title="insertIntoDatabase:"></a>
+	<h3 class="subsubtitle method-title">insertIntoDatabase:</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)insertIntoDatabase:(AGSGTOfflineTriggerDataManager *)<em>db</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/notification" title="notification"></a>
+	<h3 class="subsubtitle method-title">notification</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSMutableDictionary *)notification</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/run" title="run"></a>
+	<h3 class="subsubtitle method-title">run</h3>
+
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)run</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setGeoWithEsriJson:" title="setGeoWithEsriJson:"></a>
+	<h3 class="subsubtitle method-title">setGeoWithEsriJson:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the geographic region for this trigger from a Esri JSON geometry.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setGeoWithEsriJson:(NSDictionary *)<em>esriJson</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>esriJson</em></dt>
+			<dd><p>An NSDictionary containing valid Esri JSON.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setGeoWithGeoJson:" title="setGeoWithGeoJson:"></a>
+	<h3 class="subsubtitle method-title">setGeoWithGeoJson:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the geographic region for this trigger from a GeoJSON geometry.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setGeoWithGeoJson:(NSDictionary *)<em>geoJson</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>geoJson</em></dt>
+			<dd><p>An NSDictionary containing valid GeoJSON.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setGeoWithLatitude:longitude:distance:" title="setGeoWithLatitude:longitude:distance:"></a>
+	<h3 class="subsubtitle method-title">setGeoWithLatitude:longitude:distance:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the geographic region for this trigger from a point and distance.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setGeoWithLatitude:(double)<em>latitude</em> longitude:(double)<em>longitude</em> distance:(double)<em>distance</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>latitude</em></dt>
+			<dd><p>Latitude of the center point of the trigger.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>longitude</em></dt>
+			<dd><p>Longitude of the center point of the trigger.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>distance</em></dt>
+			<dd><p>A distance in meters.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setGeoWithLocation:distance:" title="setGeoWithLocation:distance:"></a>
+	<h3 class="subsubtitle method-title">setGeoWithLocation:distance:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the geographic region for this trigger from a point and distance.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setGeoWithLocation:(CLLocation *)<em>location</em> distance:(double)<em>distance</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>location</em></dt>
+			<dd><p>The <code>CLLocation</code> of the center point of the trigger.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>distance</em></dt>
+			<dd><p>The distance in meters.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTTrigger.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
 					
 
                     
@@ -88,7 +1734,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Esri. All rights reserved. (Last updated: 2015-10-08)</span><br />
+						<p><span class="copyright">&copy; 2015 Esri. All rights reserved. (Last updated: 2015-10-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
 				</div>

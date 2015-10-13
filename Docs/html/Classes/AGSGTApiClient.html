@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    <meta name="last-modified" content="2015-10-08">
+    <meta name="last-modified" content="2015-10-13">
 	  <meta name="product" content="api-geotrigger">
 	  <meta name="sub_category" content="Geotrigger Service">
 	  <meta name="sub_category_label" content="Geotrigger Service">
@@ -13,11 +13,11 @@
 	  <meta name="subject_label" content="MOBILE">
 	  <meta name="content-language" content="en">
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title></title>
+		<title>AGSGTApiClient Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -27,7 +27,7 @@
 			</div>
 
 			<div id="title" role="banner">
-				<h1 class="hideInXcode"></h1>
+				<h1 class="hideInXcode">AGSGTApiClient Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,9 +37,39 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
-
+	<option value="overview">Overview</option>
 	
 
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedClient">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedClient</option>
+	
+	
+
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/clearAuthorizationHeader">&nbsp;&nbsp;&nbsp;&nbsp;- clearAuthorizationHeader</option>
+	
+	<option value="//api/name/disableSSLCertPinning">&nbsp;&nbsp;&nbsp;&nbsp;- disableSSLCertPinning</option>
+	
+	<option value="//api/name/enableSSLCertPinning">&nbsp;&nbsp;&nbsp;&nbsp;- enableSSLCertPinning</option>
+	
+	<option value="//api/name/postPath:parameters:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- postPath:parameters:success:failure:</option>
+	
+	<option value="//api/name/setAuthorizationHeaderWithToken:">&nbsp;&nbsp;&nbsp;&nbsp;- setAuthorizationHeaderWithToken:</option>
+	
+	
 	
 </select>
 				</li>
@@ -48,15 +78,49 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
 
 
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedClient">sharedClient</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearAuthorizationHeader">clearAuthorizationHeader</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableSSLCertPinning">disableSSLCertPinning</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableSSLCertPinning">enableSSLCertPinning</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/postPath:parameters:success:failure:">postPath:parameters:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAuthorizationHeaderWithToken:">setAuthorizationHeaderWithToken:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="" name="top"></a>
+				<a title="AGSGTApiClient Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -65,16 +129,360 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header"></h1>
+						<h1 class="title title-header">AGSGTApiClient Class Reference</h1>
 					</div>
 				</div>
 				<div id="container">
 					
-
-                    
-
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">AGSGTApiClient.h</td>
+</tr>
+						</tbody></table></div>
 					
 
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A subclass of AFHTTPClient which provides access to the Esri Geotrigger Service API.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedClient">+&nbsp;sharedClient</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableSSLCertPinning">&ndash;&nbsp;enableSSLCertPinning</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableSSLCertPinning">&ndash;&nbsp;disableSSLCertPinning</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setAuthorizationHeaderWithToken:">&ndash;&nbsp;setAuthorizationHeaderWithToken:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearAuthorizationHeader">&ndash;&nbsp;clearAuthorizationHeader</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/postPath:parameters:success:failure:">&ndash;&nbsp;postPath:parameters:success:failure:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+
+					
+					
+
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedClient" title="sharedClient"></a>
+	<h3 class="subsubtitle method-title">sharedClient</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the singleton Geotrigger API client instance.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)sharedClient</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTApiClient.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
+
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/clearAuthorizationHeader" title="clearAuthorizationHeader"></a>
+	<h3 class="subsubtitle method-title">clearAuthorizationHeader</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clear all auth headers currently in use.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)clearAuthorizationHeader</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTApiClient.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disableSSLCertPinning" title="disableSSLCertPinning"></a>
+	<h3 class="subsubtitle method-title">disableSSLCertPinning</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disable pinning the SSL Certificate to a known valid certificate when communicating with the Geotrigger Service.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)disableSSLCertPinning</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTApiClient.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableSSLCertPinning" title="enableSSLCertPinning"></a>
+	<h3 class="subsubtitle method-title">enableSSLCertPinning</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enable pinning the SSL Certificate to a known valid certificate when communicating with the Geotrigger Service.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)enableSSLCertPinning</code></div>
+
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTApiClient.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/postPath:parameters:success:failure:" title="postPath:parameters:success:failure:"></a>
+	<h3 class="subsubtitle method-title">postPath:parameters:success:failure:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Make a request with the given parameters to the specified path.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)postPath:(NSString *)<em>path</em> parameters:(NSDictionary *)<em>parameters</em> success:(void ( ^ ) ( id responseObject ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>a Geotrigger Service API endpoint.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p>an <code>NSDictionary</code> containing parameters for the selected path.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>an <code>NSBlock</code> that will handle the response.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>an <code>NSBlock</code> that will handle any errors.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The request will be made asynchronously and upon completion, either the success or failure block will be called.</p>
+	</div>
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTApiClient.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setAuthorizationHeaderWithToken:" title="setAuthorizationHeaderWithToken:"></a>
+	<h3 class="subsubtitle method-title">setAuthorizationHeaderWithToken:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the token used for OAuth 2.0 Authentication with the Geotrigger Server.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setAuthorizationHeaderWithToken:(NSString *)<em>token</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>The token to be used for authentication.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTApiClient.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
 					
 
                     
@@ -88,7 +496,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Esri. All rights reserved. (Last updated: 2015-10-08)</span><br />
+						<p><span class="copyright">&copy; 2015 Esri. All rights reserved. (Last updated: 2015-10-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
 				</div>

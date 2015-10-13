@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    <meta name="last-modified" content="2015-10-08">
+    <meta name="last-modified" content="2015-10-13">
 	  <meta name="product" content="api-geotrigger">
 	  <meta name="sub_category" content="Geotrigger Service">
 	  <meta name="sub_category_label" content="Geotrigger Service">
@@ -13,11 +13,11 @@
 	  <meta name="subject_label" content="MOBILE">
 	  <meta name="content-language" content="en">
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title></title>
+		<title>AGSGTGeotriggerManagerDelegate Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -27,7 +27,7 @@
 			</div>
 
 			<div id="title" role="banner">
-				<h1 class="hideInXcode"></h1>
+				<h1 class="hideInXcode">AGSGTGeotriggerManagerDelegate Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,9 +37,32 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
 
 	
 
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/manager:didChangeTrackingProfileTo:from:">&nbsp;&nbsp;&nbsp;&nbsp;- manager:didChangeTrackingProfileTo:from:</option>
+	
+	<option value="//api/name/manager:didFailToUploadLocations:">&nbsp;&nbsp;&nbsp;&nbsp;- manager:didFailToUploadLocations:</option>
+	
+	<option value="//api/name/manager:didReceiveLocationUpdates:isOnDemand:">&nbsp;&nbsp;&nbsp;&nbsp;- manager:didReceiveLocationUpdates:isOnDemand:</option>
+	
+	<option value="//api/name/manager:didUploadLocations:">&nbsp;&nbsp;&nbsp;&nbsp;- manager:didUploadLocations:</option>
+	
+	
 	
 </select>
 				</li>
@@ -48,15 +71,41 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
 
 
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager:didChangeTrackingProfileTo:from:">manager:didChangeTrackingProfileTo:from:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager:didFailToUploadLocations:">manager:didFailToUploadLocations:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager:didReceiveLocationUpdates:isOnDemand:">manager:didReceiveLocationUpdates:isOnDemand:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager:didUploadLocations:">manager:didUploadLocations:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="" name="top"></a>
+				<a title="AGSGTGeotriggerManagerDelegate Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -65,16 +114,300 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header"></h1>
+						<h1 class="title title-header">AGSGTGeotriggerManagerDelegate Protocol Reference</h1>
 					</div>
 				</div>
 				<div id="container">
 					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">AGSGTGeotriggerManager.h</td>
+</tr>
+						</tbody></table></div>
+					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Fine mode receives the most accurate and up to date location information at the cost of battery usage.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/manager:didReceiveLocationUpdates:isOnDemand:">&ndash;&nbsp;manager:didReceiveLocationUpdates:isOnDemand:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/manager:didUploadLocations:">&ndash;&nbsp;manager:didUploadLocations:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/manager:didFailToUploadLocations:">&ndash;&nbsp;manager:didFailToUploadLocations:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/manager:didChangeTrackingProfileTo:from:">&ndash;&nbsp;manager:didChangeTrackingProfileTo:from:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+
+					
+					
 
 					
 
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/manager:didChangeTrackingProfileTo:from:" title="manager:didChangeTrackingProfileTo:from:"></a>
+	<h3 class="subsubtitle method-title">manager:didChangeTrackingProfileTo:from:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the Tracking Profile has been changed.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)manager:(AGSGTGeotriggerManager *)<em>manager</em> didChangeTrackingProfileTo:(NSString *)<em>newProfile</em> from:(NSString *)<em>oldProfile</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a> object that generated the event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newProfile</em></dt>
+			<dd><p>The new Tracking Profile that the <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a> is using.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>oldProfile</em></dt>
+			<dd><p>The Tracking Profile that the <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a> was using previously.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/manager:didFailToUploadLocations:" title="manager:didFailToUploadLocations:"></a>
+	<h3 class="subsubtitle method-title">manager:didFailToUploadLocations:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that locations have failed to upload to the Geotrigger Service servers.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)manager:(AGSGTGeotriggerManager *)<em>manager</em> didFailToUploadLocations:(NSError *)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a> object that generated the event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>The error that was encountered when trying to upload the locations.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/manager:didReceiveLocationUpdates:isOnDemand:" title="manager:didReceiveLocationUpdates:isOnDemand:"></a>
+	<h3 class="subsubtitle method-title">manager:didReceiveLocationUpdates:isOnDemand:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that new location data is available.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)manager:(AGSGTGeotriggerManager *)<em>manager</em> didReceiveLocationUpdates:(NSArray *)<em>locations</em> isOnDemand:(BOOL)<em>isOnDemand</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a> object that generated the event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locations</em></dt>
+			<dd><p>The <code>NSArray</code> that the <code>CLLocationManager</code> passed to the <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isOnDemand</em></dt>
+			<dd><p>A <code>BOOL</code> that indicates whether or not the locations were obtained as a result of calling <code>requestOnDemandUpdate:</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/manager:didUploadLocations:" title="manager:didUploadLocations:"></a>
+	<h3 class="subsubtitle method-title">manager:didUploadLocations:</h3>
+
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that locations have been uploaded to the Geotrigger Service servers.</p>
+	</div>
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)manager:(AGSGTGeotriggerManager *)<em>manager</em> didUploadLocations:(NSUInteger)<em>count</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The <a href="../Classes/AGSGTGeotriggerManager.html"><code>AGSGTGeotriggerManager</code></a> object that generated the event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>count</em></dt>
+			<dd><p>The number of location updates that were sent to the server.</p></dd>
+		</dl>
+		
+	</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AGSGTGeotriggerManager.h</code><br />
+	</div>
+	
+	
+</div>
+						
+					</div>
+					
 					
 
                     
@@ -88,7 +421,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Esri. All rights reserved. (Last updated: 2015-10-08)</span><br />
+						<p><span class="copyright">&copy; 2015 Esri. All rights reserved. (Last updated: 2015-10-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
 				</div>
