@@ -154,7 +154,10 @@ typedef NS_ENUM(int, AGSGTLogLevel) {
  @param completion This block will be called once the manager has finished setting itself up and is ready to upload locations. Unless
  there is an error encountered during that process, in which case the error parameter will be non-nil.
  */
-+ (void)setupWithClientId:(NSString *)clientId isProduction:(BOOL)isProduction isOffline:(BOOL)isOffline completion:(void (^)(NSError *error))completion;
++ (void)setupWithClientId:(NSString *)clientId
+             isProduction:(BOOL)isProduction
+                isOffline:(BOOL)isOffline
+               completion:(void (^)(NSError *error))completion;
 
 /** Setup the manager with offline mode, the given clientId and add the supplied list of tags to the device when it is created.
 
