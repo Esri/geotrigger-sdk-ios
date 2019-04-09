@@ -30,7 +30,7 @@ enable the following "Background Modes" which can be found in the "Capabilities"
 
 There are two ways to add the Geotrigger SDK for iOS to your project -- manually or using [CocoaPods](http://cocoapods.org/).
 
-### With Cocoapods
+### With CocoaPods
 
 If you are using [CocoaPods] adding the Geotrigger SDK is extra easy!
 
@@ -41,7 +41,7 @@ This will grab the latest version of the Geotrigger SDK from github and set your
 
 If you aren't using [CocoaPods] yet you should [check it out](http://docs.cocoapods.org/guides/installing_cocoapods.html)!
 
-### Without Cocoapods
+### Without CocoaPods
 
 1. Copy the `GeotriggerSDK.framework` file from the [GitHub repo](https://github.com/Esri/geotrigger-sdk-ios) into your project and link against it. The easiest way to do this is to simply drag and drop it from Finder into the Frameworks folder in XCode.
 2. Link in our dependencies. This can be done either of the following ways:
