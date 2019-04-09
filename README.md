@@ -43,10 +43,10 @@ If you aren't using [CocoaPods] yet you should [check it out](http://docs.cocoap
 
 ### Without CocoaPods
 
-1. Copy the `GeotriggerSDK.framework` file from the [GitHub repo](https://github.com/Esri/geotrigger-sdk-ios) into your project and link against it. The easiest way to do this is to simply drag and drop it from Finder into the Frameworks folder in XCode.
+1. Copy the `GeotriggerSDK.framework` file from the [GitHub repo](https://github.com/Esri/geotrigger-sdk-ios) into your project and link against it. The easiest way to do this is to simply drag and drop it from Finder into the Frameworks folder in Xcode.
 2. Link in our dependencies. This can be done either of the following ways:
   1. Setting the "Enable Modules (C and Objective-C)" and "Link Frameworks Automatically" flags to `YES` in the
-    "Apple LLVM 5.0 - Language - Modules" section of the Build Settings. These values are the defaults in XCode 5 and above.
+    "Apple LLVM 5.0 - Language - Modules" section of the Build Settings. These values are the defaults in Xcode 5 and above.
   1. If for some reason you can't link frameworks automatically, these are the libraries that will be required to be linked in your project:
     * CoreLocation
     * Security
